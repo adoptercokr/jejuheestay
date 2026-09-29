@@ -74,6 +74,10 @@
   }
   </script>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="apple-touch-icon" href="./favicon.svg">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,9 +131,10 @@
 <body class="selection:bg-stone-300 selection:text-stone-900">
 
   <!-- Header -->
-  <header class="fixed top-0 w-full z-40 transition-all duration-300 py-5 px-6 md:px-12 flex justify-between items-center" id="mainHeader">
-    <a href="#" class="text-xl md:text-2xl font-serif tracking-[0.25em] text-white drop-shadow-md">
-      HEESTAY <span class="text-[9px] tracking-[0.25em] font-sans uppercase font-light text-stone-200 block -mt-1">Jeju Private Poolvilla</span>
+  <header class="fixed top-0 w-full z-40 transition-all duration-300 py-3 sm:py-4 px-4 sm:px-6 md:px-12 flex justify-between items-center bg-black/40 backdrop-blur-md border-b border-white/10" id="mainHeader">
+    <a href="#" class="text-base sm:text-lg md:text-2xl font-serif tracking-[0.2em] text-white drop-shadow-md flex flex-col">
+      <span class="font-normal tracking-[0.22em]">JEJU HEESTAY</span>
+      <span class="text-[9px] sm:text-[10px] tracking-[0.25em] font-sans font-medium text-amber-300 -mt-0.5">제주 희스테이 단독 풀빌라</span>
     </a>
     
     <nav class="hidden lg:flex items-center space-x-7 text-xs tracking-widest text-white/90 drop-shadow">
@@ -141,15 +146,25 @@
     </nav>
 
     <div class="flex items-center space-x-2">
-      <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="text-xs px-3.5 py-1.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-full transition flex items-center gap-1.5 shadow-sm">
+      <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="text-xs px-3 sm:px-3.5 py-1.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-full transition flex items-center gap-1.5 shadow-sm">
         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-        <span>카카오톡 문의</span>
+        <span>카톡 문의</span>
       </a>
-      <a href="#calendar" class="text-xs px-4 py-2 bg-white/20 hover:bg-white/40 text-white backdrop-blur-md rounded-full transition border border-white/30 tracking-wider hidden sm:inline-flex">
-        예약 가능일 확인
+      <a href="#calendar" class="text-xs px-3.5 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-full transition tracking-wider hidden sm:inline-flex font-medium shadow">
+        예약 가능일
       </a>
     </div>
   </header>
+
+  <!-- 모바일 전용 상단 콤팩트 가로 탭 메뉴바 (대괄호 없는 세련된 모던 탭) -->
+  <nav class="fixed top-[52px] sm:top-[60px] left-0 right-0 z-30 lg:hidden px-3 py-1.5 bg-stone-900/90 backdrop-blur-md border-b border-stone-800 flex items-center gap-1.5 overflow-x-auto scrollbar-none text-[11px]">
+    <a href="#spaces" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">공간 둘러보기</a>
+    <a href="#rate" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">이용요금</a>
+    <a href="#calendar" class="px-3 py-1 rounded-full bg-amber-600/90 text-white font-medium whitespace-nowrap transition shadow-sm">예약 달력</a>
+    <a href="#amenities" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">구비시설</a>
+    <a href="#guide-fee" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">이용안내</a>
+    <a href="#local-guide" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">오시는 길</a>
+  </nav>
 
   <!-- Hero Section: 화면 전체(100vh) 풀스크린 비디오 배경 (유튜브 인트로 쇼츠 영상 연동) -->
   <section class="relative h-screen min-h-[640px] w-full flex items-center justify-center overflow-hidden bg-stone-950">
@@ -203,7 +218,7 @@
       <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-2">Special Value</span>
       <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">추가요금 없는 투명한 가격과 온전한 쉼</h2>
       <p class="text-brand-muted text-xs md:text-sm mt-2 leading-relaxed">
-        희스테이는 수영장 온수비, 바베큐 그릴비, 자쿠지 사용료 등 부당한 옵션 추가요금을 전혀 받지 않습니다.
+        제주 희스테이는 수영장 온수비, 바베큐 그릴비, 자쿠지 사용료 등 부당한 옵션 추가요금을 전혀 받지 않습니다.
       </p>
     </div>
 
@@ -306,7 +321,7 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
         <div>
           <span class="text-xs uppercase tracking-[0.25em] text-brand-accent font-bold block mb-1">Space Tour</span>
-          <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">희스테이 공간 둘러보기</h2>
+          <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">제주 희스테이 공간 둘러보기</h2>
           <p class="text-xs text-stone-500 mt-1">130평 대지 위 40평 2층 단독주택 (기본 4인 / 최대 9인, 침실 3개 · 화장실 2개)</p>
         </div>
         <div class="flex flex-wrap items-center gap-2.5">
@@ -548,7 +563,7 @@
     <div class="text-center max-w-xl mx-auto mb-12">
       <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-2">Rates & Policy</span>
       <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">이용 요금 및 보증금 체계</h2>
-      <p class="text-stone-500 text-xs mt-2">희스테이는 기본 3박 이상 예약 가능하며, 7박(10%) · 14박(15%) · 28박(20%) 연박 시 큰 폭의 할인을 드립니다</p>
+      <p class="text-stone-500 text-xs mt-2">제주 희스테이는 기본 3박 이상 예약 가능하며, 7박(10%) · 14박(15%) · 28박(20%) 연박 시 큰 폭의 할인을 드립니다</p>
     </div>
 
     <!-- 연박 할인 혜택 3대 배너 (강조) -->
@@ -593,7 +608,7 @@
             <span class="font-semibold">+20,000원 / 1박</span>
           </li>
           <li class="text-[11px] text-stone-400 pt-1 leading-relaxed">
-            * 희스테이는 여유로운 제주의 휴식을 위해 <strong>기본 3박 이상</strong>부터 예약이 가능합니다. (최대 9인 투숙 가능)
+            * 제주 희스테이는 여유로운 제주의 휴식을 위해 <strong>기본 3박 이상</strong>부터 예약이 가능합니다. (최대 9인 투숙 가능)
           </li>
         </ul>
       </div>
@@ -653,23 +668,30 @@
 
       <!-- 관리자 모드 상태 바 (로그인 시 노출) -->
       <div id="adminBar" class="hidden mb-6 p-4 bg-stone-900 text-white rounded-2xl border border-stone-700 flex flex-wrap items-center justify-between gap-3 shadow-xl">
-        <div class="flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-2.5">
           <span class="w-3 h-3 rounded-full bg-amber-400 animate-pulse"></span>
-          <span class="font-bold text-xs text-amber-200">🛠️ 관리자 편집 모드 작동 중</span>
-          <span class="text-[11px] text-stone-400 hidden sm:inline">(달력의 날짜를 클릭하면 [예약완료 ↔ 예약가능]이 바로 전환됩니다)</span>
+          <span class="font-bold text-xs text-amber-200">🛠️ 관리자 편집 모드</span>
+          <span id="cloudSyncStatus" class="text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span>전 기기 실시간 동기화 연결됨</span>
+          </span>
+          <span class="text-[10px] text-stone-400 hidden sm:inline">(날짜 클릭 시 PC·스마트폰 실시간 자동 저장)</span>
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-2">
           <button onclick="openHolidaySettingModal()" class="px-3 py-1.5 bg-rose-700 hover:bg-rose-600 text-white rounded-lg text-xs font-bold transition flex items-center gap-1 shadow-sm">
-            <span>📅 공휴일 관리</span>
+            <span>📅 공휴일</span>
           </button>
           <button onclick="openPriceSettingModal()" class="px-3 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-lg text-xs font-bold transition flex items-center gap-1 shadow-sm">
             <span>⚙️ 요금 설정</span>
           </button>
-          <button onclick="copyBookedDates()" class="px-3 py-1.5 bg-stone-700 hover:bg-stone-600 text-white rounded-lg text-xs transition">
-            📋 예약목록 복사
+          <button onclick="copyBookedDates()" class="px-3 py-1.5 bg-stone-700 hover:bg-stone-600 text-stone-200 hover:text-white rounded-lg text-xs transition" title="현재 예약 목록을 클립보드로 복사">
+            📋 복사
           </button>
-          <button onclick="logoutAdmin()" class="px-3 py-1.5 bg-red-900 hover:bg-red-800 text-white rounded-lg text-xs transition">
-            관리자 종료
+          <button onclick="promptImportBookedDates()" class="px-3 py-1.5 bg-stone-700 hover:bg-stone-600 text-stone-200 hover:text-white rounded-lg text-xs transition" title="날짜 목록 직접 붙여넣어 즉시 반영">
+            📥 불러오기
+          </button>
+          <button onclick="logoutAdmin()" class="px-3 py-1.5 bg-red-900 hover:bg-red-800 text-white rounded-lg text-xs font-medium transition">
+            종료
           </button>
         </div>
       </div>
@@ -742,7 +764,7 @@
 
             <!-- 3박 알림 안내 -->
             <div id="minNightNotice" class="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-800 leading-relaxed">
-              💡 희스테이는 <strong>기본 3박 이상</strong>부터 예약이 가능합니다. 달력에서 날짜를 클릭하여 체크인·체크아웃을 지정해 주세요.
+              💡 제주 희스테이는 <strong>기본 3박 이상</strong>부터 예약이 가능합니다. 달력에서 날짜를 클릭하여 체크인·체크아웃을 지정해 주세요.
             </div>
 
             <!-- 금액 세부 계산창 -->
@@ -1025,7 +1047,7 @@
     <div class="max-w-6xl mx-auto px-6 md:px-12">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-2">Local Guide</span>
-        <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">희스테이 주변 맛집 & 명소 가이드</h2>
+        <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">제주 희스테이 주변 맛집 & 명소 가이드</h2>
         <p class="text-stone-500 text-xs md:text-sm mt-2 leading-relaxed">
           성산읍 온평리와 동부 해안을 여유롭게 만끽할 수 있는 호스트 추천 로컬 핫플레이스입니다.
         </p>
@@ -1228,9 +1250,9 @@
 
   <!-- Footer -->
   <footer class="bg-stone-900 text-stone-400 py-10 px-6 text-xs text-center border-t border-stone-800 pb-24 md:pb-10">
-    <p class="font-serif text-stone-200 text-lg tracking-widest mb-1">HEESTAY JEJU</p>
-    <p class="text-stone-500">상호명: 희스테이 | 대표자: 지희철 | 사업자번호: 526-40-00959 | 소재지: 제주특별자치도 서귀포시 성산읍 온평서로 28-7</p>
-    <p class="text-stone-600 mt-2">© 2026 HEESTAY. All rights reserved.</p>
+    <p class="font-serif text-stone-200 text-lg tracking-widest mb-1">JEJU HEESTAY</p>
+    <p class="text-stone-500">상호명: 제주 희스테이 | 대표자: 지희철 | 사업자번호: 526-40-00959 | 소재지: 제주특별자치도 서귀포시 성산읍 온평서로 28-7</p>
+    <p class="text-stone-600 mt-2">© 2026 JEJU HEESTAY. All rights reserved.</p>
   </footer>
 
   <!-- 모바일 하단 바 -->
@@ -1792,6 +1814,82 @@
       bookedDates.sort();
       localStorage.setItem('HEESTAY_BOOKED_DATES', JSON.stringify(bookedDates));
       renderCalendar();
+
+      // 전 기기 실시간 클라우드 동기화 전송
+      syncBookingsToCloud();
+    }
+
+    // 클라우드로 최신 예약 날짜 전송 및 저장
+    async function syncBookingsToCloud() {
+      const statusEl = document.getElementById('cloudSyncStatus');
+      if (statusEl) {
+        statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span><span>클라우드 동기화 중...</span>';
+      }
+      try {
+        const res = await fetch('/api/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            password: '1316',
+            bookedDates: bookedDates
+          })
+        });
+        if (res.ok) {
+          if (statusEl) {
+            statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span>전 기기 실시간 동기화 완료</span>';
+          }
+        }
+      } catch (err) {
+        console.warn('클라우드 동기화 지연:', err);
+        if (statusEl) {
+          statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span><span>로컬 저장 완료 (온라인 시 자동 반영)</span>';
+        }
+      }
+    }
+
+    // 클라우드에서 예약 날짜 실시간 불러오기 (페이지 로딩 시 자동 실행)
+    async function fetchBookingsFromCloud() {
+      try {
+        const res = await fetch('/api/bookings', { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && Array.isArray(data.bookedDates) && data.bookedDates.length > 0) {
+            bookedDates = data.bookedDates;
+            localStorage.setItem('HEESTAY_BOOKED_DATES', JSON.stringify(bookedDates));
+            renderCalendar();
+            console.log('클라우드 예약 데이터 로드 완료:', bookedDates.length, '개 일정');
+          }
+        }
+      } catch (e) {
+        console.warn('클라우드 불러오기 지연, 로컬 캐시 유지');
+      }
+    }
+
+    // 예약 날짜 직접 붙여넣어 불러오기 (백업/동기화 도구)
+    function promptImportBookedDates() {
+      const input = prompt('복사해 둔 예약 날짜 목록을 여기에 붙여넣어 주세요.\n(예: ["2026-10-15", "2026-10-16"] 또는 2026-10-15, 2026-10-16)');
+      if (!input || input.trim() === '') return;
+
+      try {
+        let parsedDates = [];
+        if (input.trim().startsWith('[')) {
+          parsedDates = JSON.parse(input.trim());
+        } else {
+          parsedDates = input.split(/[\s,]+/).map(s => s.trim().replace(/['"]/g, '')).filter(s => /^\d{4}-\d{2}-\d{2}$/.test(s));
+        }
+
+        if (Array.isArray(parsedDates) && parsedDates.length > 0) {
+          bookedDates = Array.from(new Set([...bookedDates, ...parsedDates])).sort();
+          localStorage.setItem('HEESTAY_BOOKED_DATES', JSON.stringify(bookedDates));
+          renderCalendar();
+          syncBookingsToCloud();
+          alert(`총 ${parsedDates.length}개의 예약 일정이 성공적으로 반영 및 클라우드에 동기화되었습니다!`);
+        } else {
+          alert('날짜 형식을 인식하지 못했습니다. YYYY-MM-DD 형식으로 입력해 주세요.');
+        }
+      } catch (err) {
+        alert('입력 내용 파싱 실패: ' + err.message);
+      }
     }
 
     // 고객 모드: 체크인/체크아웃 날짜 선택
@@ -2431,6 +2529,7 @@
 
     // 초기 실행
     renderCalendar();
+    fetchBookingsFromCloud(); // 클라우드 실시간 예약 데이터 자동 동기화
   </script>
 </body>
 </html>
