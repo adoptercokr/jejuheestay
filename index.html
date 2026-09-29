@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>희스테이 (HEESTAY) | 제주 성산 130평 대지 40평 단독주택 풀빌라</title>
+  <meta name="description" content="제주 성산 온평리 130평 대지 40평 단독주택 풀빌라. 수영장, 야외 자쿠지, 썬룸 바베큐장 추가요금 무료. 기본 3박 이상, 여백과 쉼이 머무는 프라이빗 단독주택.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#FAF8F5',
+              card: '#FFFFFF',
+              sand: '#F3EFEA',
+              border: '#E8E1D9',
+              dark: '#1C1917',
+              accent: '#8E6E53',
+              muted: '#736B63'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Noto Serif KR', 'serif'],
+            krSerif: ['Noto Serif KR', 'serif'],
+            sans: ['Pretendard', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #FAF8F5; color: #1C1917; font-family: 'Pretendard', sans-serif; }
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(15,15,15,0.4) 0%, rgba(15,15,15,0.2) 50%, rgba(15,15,15,0.7) 100%);
+    }
+
+    /* 캘린더 스타일 */
+    .cal-day { aspect-ratio: 1 / 1; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 0.85rem; border-radius: 0.5rem; transition: all 0.15s; }
+    .cal-day.available:hover { background-color: #F3EFEA; cursor: pointer; }
+    .cal-day.booked { background-color: #FEE2E2; color: #DC2626; cursor: not-allowed; text-decoration: line-through; opacity: 0.65; }
+    .cal-day.selected { background-color: #1C1917 !important; color: #ffffff !important; font-weight: 600; }
+    .cal-day.in-range { background-color: #EFE8DF !important; color: #1C1917 !important; border-radius: 0; }
+    .cal-day.range-start { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+    .cal-day.range-end { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .cal-day.past { color: #D1D5DB; cursor: not-allowed; }
+  </style>
+</head>
+<body class="selection:bg-stone-300 selection:text-stone-900">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-40 transition-all duration-300 py-5 px-6 md:px-12 flex justify-between items-center" id="mainHeader">
+    <a href="#" class="text-xl md:text-2xl font-serif tracking-[0.25em] text-white drop-shadow-md">
+      HEESTAY <span class="text-[9px] tracking-[0.25em] font-sans uppercase font-light text-stone-200 block -mt-1">Jeju Private Poolvilla</span>
+    </a>
+    
+    <nav class="hidden lg:flex items-center space-x-7 text-xs tracking-widest text-white/90 drop-shadow">
+      <a href="#spaces" class="hover:text-amber-200 transition">공간 둘러보기</a>
+      <a href="#rate" class="hover:text-amber-200 transition">이용요금 & 예약</a>
+      <a href="#amenities" class="hover:text-amber-200 transition">풀옵션 구비시설</a>
+      <a href="#guide-fee" class="hover:text-amber-200 transition">이용안내 & 공과금</a>
+      <a href="#local-guide" class="hover:text-amber-200 transition">주변여행 & 위치</a>
+    </nav>
+
+    <div class="flex items-center space-x-2">
+      <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="text-xs px-3.5 py-1.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-full transition flex items-center gap-1.5 shadow-sm">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+        <span>카카오톡 문의</span>
+      </a>
+      <a href="#calendar" class="text-xs px-4 py-2 bg-white/20 hover:bg-white/40 text-white backdrop-blur-md rounded-full transition border border-white/30 tracking-wider hidden sm:inline-flex">
+        예약 가능일 확인
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section: 첫 번째 시안의 화면 전체(100vh) 풀스크린 비디오 배경 완벽 적용 -->
+  <section class="relative h-screen min-h-[640px] w-full flex items-center justify-center overflow-hidden">
+    <!-- 화면 전체를 채우는 인트로 영상 -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="./heestay-intro-movie.mp4" type="video/mp4">
+      <img src="./img/외관1.jpg" alt="희스테이 외관" class="w-full h-full object-cover">
+    </video>
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/25 text-xs sm:text-sm text-stone-200 font-light mb-4 drop-shadow">
+        <span>수영장 · 자쿠지 · 바베큐</span>
+        <span class="w-1 h-1 rounded-full bg-amber-400"></span>
+        <span class="text-amber-300 font-medium">추가 비용 없음</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl md:text-7xl font-krSerif font-light tracking-wide leading-tight mb-5 drop-shadow-lg">
+        머묾, 그 자체가<br class="sm:hidden" /> 온전한 쉼이 되는 곳
+      </h1>
+      <p class="text-stone-200 text-xs sm:text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed mb-8 drop-shadow">
+        수영장, 자쿠지, 바베큐 추가 비용 없이 오롯이 누리는 제주의 여유 —<br class="hidden sm:inline">
+        성산 온평리 130평 대지 위 40평 단독주택에서 마주하는 온전한 쉼
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3.5 justify-center items-center">
+        <a href="#spaces" class="px-7 py-3 text-xs tracking-widest uppercase border border-white/70 hover:bg-white hover:text-stone-900 transition-all duration-300 rounded-full backdrop-blur-sm">
+          공간 둘러보기
+        </a>
+        <a href="#calendar" class="px-7 py-3 text-xs tracking-widest uppercase bg-brand-accent/90 hover:bg-brand-accent text-white transition-all duration-300 rounded-full shadow-lg">
+          예약 가능일 & 견적 확인
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Down Icon -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 text-white/70 animate-bounce flex flex-col items-center">
+      <span class="text-[9px] tracking-[0.25em] uppercase mb-1">SCROLL</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+  <!-- Section 1: 숙소 소개 및 3대 무료 혜택 전면 강조 -->
+  <section id="zero-benefits" class="py-20 px-6 md:px-12 max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-2">Special Value</span>
+      <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">추가요금 없는 투명한 가격과 온전한 쉼</h2>
+      <p class="text-brand-muted text-xs md:text-sm mt-2 leading-relaxed">
+        희스테이는 수영장 온수비, 바베큐 그릴비, 자쿠지 사용료 등 부당한 옵션 추가요금을 전혀 받지 않습니다.
+      </p>
+    </div>
+
+    <!-- 3대 제로 혜택 카드 (심플 모노크롬 라인 아이콘 적용) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- 1. 수영장 0원 & 온수 가능 & 공과금 실비 -->
+      <div class="bg-white p-8 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-5">
+            <div class="w-11 h-11 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800">
+              <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17c2 0 3-1 5-1s3 1 5 1 3-1 5-1 3 1 6 1M3 21c2 0 3-1 5-1s3 1 5 1 3-1 5-1 3 1 6 1M16 8a2 2 0 100-4 2 2 0 000 4zM7 9l4 4 4-2-1.5-3"/></svg>
+            </div>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-800 text-xs font-semibold rounded-full border border-stone-200">시설 추가비 0원</span>
+          </div>
+          <h3 class="text-lg font-bold text-brand-dark mb-1">야외 수영장 무료 <span class="text-xs text-brand-accent font-normal block sm:inline">(온수 이용 가능)</span></h3>
+          <p class="text-xs text-brand-muted leading-relaxed mb-3">
+            돌담으로 둘러싸인 프라이빗 야외 풀장. 타 숙소처럼 비싼 수영장 이용료나 온수 세팅비(5~10만원)를 받지 않으며, <strong>온수 공급이 가능</strong>합니다.
+          </p>
+          <div class="p-2.5 bg-stone-50 rounded-xl text-[11px] text-stone-600 border border-stone-100 leading-relaxed">
+            💧 <strong>공과금 실비 안내:</strong> 물 사용료(수도세: 톤당 약 600원 / 1회 완충 시 약 4천원 예상) 및 온수 가스비는 마진 없이 <strong>실제 사용하신 만큼 공과금 실비로 보증금에서 투명하게 정산</strong>됩니다.
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-stone-100 text-xs text-stone-400 flex justify-between">
+          <span>타 숙소 온수비 5~10만원 상당</span>
+          <span class="font-semibold text-stone-800">시설비 0원 (실비 정산)</span>
+        </div>
+      </div>
+
+      <!-- 2. 자쿠지 0원 & 공과금 실비 -->
+      <div class="bg-white p-8 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-5">
+            <div class="w-11 h-11 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800">
+              <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 14a8 8 0 0016 0v-2H4v2zM6 19v2M18 19v2M8 7c0-2 1-3 1-3s1 1 1 3M12 6c0-2 1-3 1-3s1 1 1 3M16 7c0-2 1-3 1-3s1 1 1 3"/></svg>
+            </div>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-800 text-xs font-semibold rounded-full border border-stone-200">시설 추가비 0원</span>
+          </div>
+          <h3 class="text-lg font-bold text-brand-dark mb-1">야외 노천 자쿠지 무료 <span class="text-xs text-brand-accent font-normal block sm:inline">(사계절 온수 스파)</span></h3>
+          <p class="text-xs text-brand-muted leading-relaxed mb-3">
+            성산의 밤하늘 별을 올려다보며 하루의 피로를 녹이는 노천 자쿠지. 별도의 스파 시설 이용료 없이 자유롭게 이용하실 수 있습니다.
+          </p>
+          <div class="p-2.5 bg-stone-50 rounded-xl text-[11px] text-stone-600 border border-stone-100 leading-relaxed">
+            ♨️ <strong>공과금 실비 안내:</strong> 온수 공급에 쓰이는 수도 및 가스는 부당한 옵션 비용 없이 <strong>계량기에 찍힌 실제 사용량 실비만 보증금에서 차감 정산</strong>됩니다.
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-stone-100 text-xs text-stone-400 flex justify-between">
+          <span>타 숙소 3~5만원 상당</span>
+          <span class="font-semibold text-stone-800">시설비 0원 (실비 정산)</span>
+        </div>
+      </div>
+
+      <!-- 3. 바베큐 썬룸 0원 & 석쇠/숯 직접구매 & 사용 후 청소 필수 -->
+      <div class="bg-white p-8 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-5">
+            <div class="w-11 h-11 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800">
+              <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v4M8 4l2 3M16 4l-2 3M5 11h14a7 7 0 01-14 0zM7 16l-2 5M17 16l2 5M12 16v5"/></svg>
+            </div>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-800 text-xs font-semibold rounded-full border border-stone-200">그릴 대여비 0원</span>
+          </div>
+          <h3 class="text-lg font-bold text-brand-dark mb-1">사계절 바베큐 썬룸 무료</h3>
+          <p class="text-xs text-brand-muted leading-relaxed mb-3">
+            비와 바람을 완벽히 막아주는 독립 썬룸과 웨버 바베큐 그릴 장비 대여비가 전액 무료로 제공됩니다.
+          </p>
+          <div class="p-2.5 bg-amber-50/80 rounded-xl text-[11px] text-amber-900 border border-amber-200/80 space-y-1 leading-relaxed">
+            <p>🥩 <strong>석쇠그릴 및 숯 직접 구매 사용:</strong> 위생적인 이용을 위해 일회용 석쇠망과 숯(착화제)은 인근 마트나 편의점에서 직접 구매해 사용해 주세요.</p>
+            <p>✨ <strong>사용 후 세척 & 청소 필수:</strong> 다음 이용객을 위해 이용 후 그릴 및 바베큐장 정리정돈과 세척을 꼭 부탁드립니다.</p>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-stone-100 text-xs text-stone-400 flex justify-between">
+          <span>그릴 대여비 3만원 상당</span>
+          <span class="font-semibold text-stone-800">무료 제공 (숯·석쇠 개별준비)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 공과금 실비 제도 & 보증금 안내 배너 -->
+    <div class="mt-8 p-6 bg-brand-sand rounded-2xl border border-brand-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div class="flex items-start gap-3">
+        <div class="w-7 h-7 rounded-full bg-stone-800 text-white flex items-center justify-center flex-shrink-0">
+          <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-brand-dark">투명한 공과금 실비 정산 & 보증금 제도</h4>
+          <p class="text-xs text-brand-muted mt-1 leading-relaxed">
+            전기, 수도, LPG 가스는 마진을 남기지 않고 실제 계량기 수치대로 실비만 정산합니다.<br class="hidden sm:inline">
+            퇴실 시 보증금에서 실제 사용 공과금을 차감한 후 잔액을 100% 즉시 반환해 드립니다.
+          </p>
+        </div>
+      </div>
+      <div class="text-xs text-stone-600 bg-white px-4 py-2.5 rounded-xl border border-brand-border whitespace-nowrap">
+        <strong>예약 기준:</strong> 기본 4인 기준 (3박 이상)
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: 공간 갤러리 (6대 핵심 공간 & 라이트박스) -->
+  <section id="spaces" class="py-20 bg-white border-y border-brand-border">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-brand-accent font-bold block mb-1">Space Tour</span>
+          <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">희스테이 공간 둘러보기</h2>
+          <p class="text-xs text-stone-500 mt-1">130평 대지 위 40평 2층 단독주택 (기본 4인 / 최대 9인, 침실 3개 · 화장실 2개)</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="openAllPhotosModal('all')" class="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-full text-xs font-semibold tracking-wider transition shadow-md flex items-center gap-2">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <span>사진 전체보기 (34장)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 공간 둘러보기 갤러리 그리드 (균일한 8개 공간 4열 카드) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- 1. 야외 수영장 & 노천 자쿠지 통합 (총 8장) -->
+        <div class="rounded-2xl overflow-hidden bg-brand-sand border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="group relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openPhotoModal('./img/수영장1.jpg', '야외 프라이빗 풀 & 노천 자쿠지', '돌담 아래 펼쳐진 시원한 수영장과 따뜻한 사계절 노천 자쿠지 스파 공간입니다. (온수 가능)')">
+              <img src="./img/수영장1.jpg" alt="야외 수영장 및 자쿠지" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-semibold rounded-full flex items-center gap-1">
+                <span>사진 8장</span>
+              </span>
+            </div>
+            <div class="p-4 bg-white">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">Pool & Jacuzzi</span>
+                <span class="px-2 py-0.5 bg-stone-100 text-stone-700 text-[10px] font-semibold rounded-full border border-stone-200">온수 가능</span>
+              </div>
+              <h4 class="text-sm font-bold text-brand-dark mt-0.5">야외 풀장 & 노천 자쿠지</h4>
+              <p class="text-[11px] text-stone-500 mt-1">돌담 아래 수영장 & 온수 스파</p>
+              
+              <!-- 서브 썸네일 스트립 -->
+              <div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-stone-100">
+                <img src="./img/수영장2.jpg" alt="수영장2" onclick="openPhotoModal('./img/수영장2.jpg', '야외 수영장 전경', '온 가족이 함께 즐기는 프라이빗 풀')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/자쿠지1.jpg" alt="자쿠지1" onclick="openPhotoModal('./img/자쿠지1.jpg', '감성 노천 자쿠지', '성산의 맑은 공기와 밤하늘 별을 보며 즐기는 야외 온수 스파')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/수영장테라스1.jpg" alt="수영장테라스" onclick="openPhotoModal('./img/수영장테라스1.jpg', '풀사이드 테라스', '물놀이 중 편안하게 쉬는 야외 데크')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <div onclick="openAllPhotosModal('pool-jacuzzi')" class="aspect-square bg-stone-100 hover:bg-stone-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-stone-700 cursor-pointer transition">
+                  +5장
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. 썬룸 바베큐 (총 2장) -->
+        <div class="rounded-2xl overflow-hidden bg-brand-sand border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="group relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openPhotoModal('./img/썬룸1.jpg', '사계절 바베큐 썬룸', '비나 바람 걱정 없이 쾌적하게 즐기는 독립 썬룸 바베큐장입니다.')">
+              <img src="./img/썬룸1.jpg" alt="바베큐 썬룸" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-semibold rounded-full">사진 2장</span>
+            </div>
+            <div class="p-4 bg-white">
+              <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">Sunroom & BBQ</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-0.5">사계절 바베큐 썬룸</h4>
+              <p class="text-[11px] text-stone-500 mt-1">웨버 그릴 대여 무료 독립 다이닝</p>
+              
+              <!-- 서브 썸네일 스트립 -->
+              <div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-stone-100">
+                <img src="./img/썬룸1.jpg" alt="썬룸1" onclick="openPhotoModal('./img/썬룸1.jpg', '바베큐 썬룸 전경', '사계절 독립 다이닝 룸')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/썬룸2.jpg" alt="썬룸2" onclick="openPhotoModal('./img/썬룸2.jpg', '썬룸 식탁 & 그릴', '식탁과 그릴이 완비된 아늑한 공간')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <div onclick="openAllPhotosModal('sunroom')" class="col-span-2 bg-stone-100 hover:bg-stone-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-stone-600 cursor-pointer transition">
+                  전체보기
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 거실 & 라운지 (총 5장) -->
+        <div class="rounded-2xl overflow-hidden bg-brand-sand border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="group relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openPhotoModal('./img/거실2.jpg', '1층 패밀리 거실', '따뜻한 우드 톤의 편안한 소파와 블루투스 스피커가 비치되어 있습니다.')">
+              <img src="./img/거실2.jpg" alt="거실" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-semibold rounded-full">사진 5장</span>
+            </div>
+            <div class="p-4 bg-white">
+              <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">Living Room</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-0.5">1층 거실 & 라운지</h4>
+              <p class="text-[11px] text-stone-500 mt-1">채광과 마당 뷰가 스며드는 패밀리 공간</p>
+              
+              <!-- 서브 썸네일 스트립 -->
+              <div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-stone-100">
+                <img src="./img/거실3.jpg" alt="거실3" onclick="openPhotoModal('./img/거실3.jpg', '거실 라운지 뷰', '통창 너머 마당이 보이는 거실')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/창1.jpg" alt="창1" onclick="openPhotoModal('./img/창1.jpg', '통창 채광', '아침 햇살이 스며드는 통창')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/스피커.jpg" alt="스피커" onclick="openPhotoModal('./img/스피커.jpg', '블루투스 스피커', '음악과 함께하는 힐링 시간')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <div onclick="openAllPhotosModal('living')" class="aspect-square bg-stone-100 hover:bg-stone-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-stone-600 cursor-pointer transition">
+                  +2장
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 주방 & 다이닝 (총 6장) -->
+        <div class="rounded-2xl overflow-hidden bg-brand-sand border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="group relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openPhotoModal('./img/주방1.jpg', '풀옵션 주방', '가족이 함께 요리할 수 있는 넉넉한 조리 공간과 식기가 완비되어 있습니다.')">
+              <img src="./img/주방1.jpg" alt="주방" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-semibold rounded-full">사진 6장</span>
+            </div>
+            <div class="p-4 bg-white">
+              <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">Kitchen & Dining</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-0.5">풀옵션 주방 & 원목 식탁</h4>
+              <p class="text-[11px] text-stone-500 mt-1">대형 냉장고, 오븐, 식탁 완비</p>
+              
+              <!-- 서브 썸네일 스트립 -->
+              <div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-stone-100">
+                <img src="./img/주방2.jpg" alt="주방2" onclick="openPhotoModal('./img/주방2.jpg', '주방 조리 공간', '인덕션 및 조리도구 완비')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/주방6.jpg" alt="주방6" onclick="openPhotoModal('./img/주방6.jpg', '주방 소형가전', '전자레인지, 밥솥, 커피머신 완비')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/식탁2.jpg" alt="식탁2" onclick="openPhotoModal('./img/식탁2.jpg', '6인용 원목 식탁', '가족이 함께하는 아늑한 식사 공간')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <div onclick="openAllPhotosModal('kitchen')" class="aspect-square bg-stone-100 hover:bg-stone-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-stone-600 cursor-pointer transition">
+                  +3장
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 3개 침실 & 파우더룸 (총 4장) -->
+        <div class="rounded-2xl overflow-hidden bg-brand-sand border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="group relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openPhotoModal('./img/방1.jpg', '2층 마스터 침실', '퀸 침대와 슈퍼싱글 침대가 준비된 넓고 쾌적한 2층 안방입니다.')">
+              <img src="./img/방1.jpg" alt="2층 침실" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-semibold rounded-full">사진 4장</span>
+            </div>
+            <div class="p-4 bg-white">
+              <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">3 Bedrooms</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-0.5">3개 침실 & 파우더룸</h4>
+              <p class="text-[11px] text-stone-500 mt-1">퀸 3개 + 슈퍼싱글 1개 (총 4베드)</p>
+              
+              <!-- 서브 썸네일 스트립 -->
+              <div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-stone-100">
+                <img src="./img/방1화장대.jpg" alt="화장대" onclick="openPhotoModal('./img/방1화장대.jpg', '2층 안방 파우더룸', '화장대와 독립 욕실 구비')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/방2.jpg" alt="방2" onclick="openPhotoModal('./img/방2.jpg', '1층 침실 1 (퀸베드)', '포근하고 조용한 1층 침실')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/방3.jpg" alt="방3" onclick="openPhotoModal('./img/방3.jpg', '1층 침실 2 (퀸베드)', '채광이 좋은 1층 또 하나의 침실')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <div onclick="openAllPhotosModal('bedroom')" class="aspect-square bg-stone-100 hover:bg-stone-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-stone-600 cursor-pointer transition">
+                  +1장
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. 2층 전망 테라스 (총 4장) -->
+        <div class="rounded-2xl overflow-hidden bg-brand-sand border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="group relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openPhotoModal('./img/2층테라스1.jpg', '2층 야외 테라스', '성산의 맑은 바람과 제주의 푸른 하늘을 조망하는 테라스입니다.')">
+              <img src="./img/2층테라스1.jpg" alt="2층 테라스" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-semibold rounded-full">사진 4장</span>
+            </div>
+            <div class="p-4 bg-white">
+              <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">2F Terrace</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-0.5">2층 야외 전망 테라스</h4>
+              <p class="text-[11px] text-stone-500 mt-1">탁 트인 하늘과 수평선을 담은 조망</p>
+              
+              <!-- 서브 썸네일 스트립 -->
+              <div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-stone-100">
+                <img src="./img/2층테라스2.jpg" alt="테라스2" onclick="openPhotoModal('./img/2층테라스2.jpg', '테라스 전경', '여유로운 차 한 잔의 여유')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/2층테라스3.jpg" alt="테라스3" onclick="openPhotoModal('./img/2층테라스3.jpg', '테라스 힐링 뷰', '제주의 맑은 하늘과 능선')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/2층테라스4.jpg" alt="테라스4" onclick="openPhotoModal('./img/2층테라스4.jpg', '테라스 조망', '시원한 바람이 머무는 휴식처')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <div onclick="openAllPhotosModal('terrace')" class="aspect-square bg-stone-100 hover:bg-stone-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-stone-600 cursor-pointer transition">
+                  +1장
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. 외관 & 잔디마당 (총 3장) -->
+        <div class="rounded-2xl overflow-hidden bg-brand-sand border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="group relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openPhotoModal('./img/외관1.jpg', '희스테이 외관 전경', '130평 프라이빗 대지와 제주 돌담으로 둘러싸인 단독주택 풀빌라입니다.')">
+              <img src="./img/외관1.jpg" alt="외관" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-semibold rounded-full">사진 3장</span>
+            </div>
+            <div class="p-4 bg-white">
+              <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">Exterior & Yard</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-0.5">외관 & 프라이빗 마당</h4>
+              <p class="text-[11px] text-stone-500 mt-1">130평 프라이빗 단독주택 풀빌라</p>
+              
+              <!-- 서브 썸네일 스트립 -->
+              <div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-stone-100">
+                <img src="./img/외관3.jpg" alt="외관3" onclick="openPhotoModal('./img/외관3.jpg', '외관 및 정원', '돌담이 아름다운 숙소 풍경')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/외관4.jpg" alt="외관4" onclick="openPhotoModal('./img/외관4.jpg', '외관 전경', '프라이빗한 단독 힐링 스테이')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <div onclick="openAllPhotosModal('exterior')" class="col-span-2 bg-stone-100 hover:bg-stone-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-stone-600 cursor-pointer transition">
+                  전체보기
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. 욕실 & 화장실 2실 (총 2장) -->
+        <div class="rounded-2xl overflow-hidden bg-brand-sand border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="group relative aspect-[4/3] overflow-hidden cursor-pointer" onclick="openPhotoModal('./img/욕실1.jpg', '1층 독립 욕실 & 화장실', '청결하고 쾌적하게 관리되는 1층 독립 욕실입니다.')">
+              <img src="./img/욕실1.jpg" alt="욕실" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2.5 right-2.5 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-semibold rounded-full">사진 2장</span>
+            </div>
+            <div class="p-4 bg-white">
+              <span class="text-[10px] font-bold text-brand-accent uppercase tracking-wider">Bathrooms</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-0.5">1층 · 2층 독립 욕실 2실</h4>
+              <p class="text-[11px] text-stone-500 mt-1">호텔식 타월 및 어메니티 완비</p>
+              
+              <!-- 서브 썸네일 스트립 -->
+              <div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-stone-100">
+                <img src="./img/욕실1.jpg" alt="욕실1" onclick="openPhotoModal('./img/욕실1.jpg', '1층 욕실', '청결한 1층 화장실 및 욕실')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <img src="./img/욕실2.jpg" alt="욕실2" onclick="openPhotoModal('./img/욕실2.jpg', '2층 전용 욕실', '마스터룸과 연결된 쾌적한 전용 욕실')" class="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-80 transition">
+                <div onclick="openAllPhotosModal('bathroom')" class="col-span-2 bg-stone-100 hover:bg-stone-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-stone-600 cursor-pointer transition">
+                  전체보기
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 층별 상세 안내 -->
+      <div class="mt-8 p-6 bg-brand-sand rounded-2xl border border-brand-border text-xs text-brand-dark grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <strong class="font-bold block mb-1">■ 1층 공간 구성</strong>
+          넓은 거실, 풀옵션 주방, 6인용 식탁, 방 2개(각 퀸 침대), 화장실 1실, 세탁실(세탁기/세제 비치)
+        </div>
+        <div>
+          <strong class="font-bold block mb-1">■ 2층 공간 구성</strong>
+          안방 마스터룸(퀸 침대 + 슈퍼싱글 침대), 화장대 파우더룸, 전용 독립 화장실 1실, 야외 전망 테라스
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 3: 요금 및 보증금 정책 -->
+  <section id="rate" class="py-20 px-6 md:px-12 max-w-5xl mx-auto">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-2">Rates & Policy</span>
+      <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">이용 요금 및 보증금 체계</h2>
+      <p class="text-stone-500 text-xs mt-2">희스테이는 기본 3박 이상 예약 가능하며, 7박/28박 시 큰 폭의 할인을 드립니다</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- 숙박 요금 -->
+      <div class="bg-white p-7 rounded-2xl border border-brand-border shadow-sm">
+        <h3 class="text-base font-bold text-brand-dark mb-4 pb-3 border-b border-stone-100 flex justify-between items-center">
+          <span>숙박 요금 (1박 기준)</span>
+          <span class="text-[11px] font-normal px-2.5 py-0.5 bg-stone-100 text-stone-600 rounded">기본 4인 기준</span>
+        </h3>
+        <ul class="space-y-3.5 text-xs text-stone-700">
+          <li class="flex justify-between items-center">
+            <span class="text-stone-500">평일 (일~목)</span>
+            <span class="text-base font-bold text-brand-dark">190,000원 <span class="font-normal text-[11px] text-stone-400">/ 1박</span></span>
+          </li>
+          <li class="flex justify-between items-center">
+            <span class="text-stone-500">주말 및 공휴일 (금, 토, 공휴일)</span>
+            <span class="text-base font-bold text-brand-dark">210,000원 <span class="font-normal text-[11px] text-stone-400">/ 1박</span></span>
+          </li>
+          <li class="flex justify-between items-center pt-2 text-[11px] text-stone-700 bg-stone-50 p-2.5 rounded-lg border border-stone-200">
+            <span>인원 추가 (4인 초과 시)</span>
+            <span class="font-semibold text-brand-dark">1인 1박당 +10,000원</span>
+          </li>
+          <li class="flex justify-between items-center text-[11px] text-amber-800 bg-amber-50/70 p-2.5 rounded-lg border border-amber-200">
+            <span>성수기 할증 (7·8월, 추석, 설연휴)</span>
+            <span class="font-semibold">+20,000원 / 1박</span>
+          </li>
+          <li class="text-[11px] text-stone-400 pt-1 leading-relaxed">
+            * 희스테이는 여유로운 제주의 휴식을 위해 <strong>기본 3박 이상</strong>부터 예약이 가능합니다. (최대 9인 투숙 가능)
+          </li>
+        </ul>
+      </div>
+
+      <!-- 보증금 체계 -->
+      <div class="bg-white p-7 rounded-2xl border border-brand-border shadow-sm">
+        <h3 class="text-base font-bold text-brand-dark mb-4 pb-3 border-b border-stone-100 flex justify-between items-center">
+          <span>보증금 및 연박 할인</span>
+          <span class="text-[11px] font-normal px-2.5 py-0.5 bg-emerald-50 text-emerald-700 rounded">실비 정산 후 환급</span>
+        </h3>
+        <ul class="space-y-3 text-xs text-stone-700">
+          <li class="p-2.5 bg-brand-sand/60 rounded-xl flex justify-between items-center">
+            <div>
+              <p class="font-bold text-brand-dark">7박 미만 (기본 3~6박)</p>
+              <p class="text-[11px] text-stone-500">퇴실 시 공과금 차감 후 즉시 반환</p>
+            </div>
+            <span class="font-bold text-stone-800">보증금 20만원</span>
+          </li>
+
+          <li class="p-2.5 bg-brand-sand/60 rounded-xl flex justify-between items-center border border-brand-accent/20">
+            <div>
+              <p class="font-bold text-brand-dark">7박 이상 (일주일 살기)</p>
+              <p class="text-[11px] text-brand-accent font-semibold">숙박 요금 10% 특별 할인</p>
+            </div>
+            <span class="font-bold text-stone-800">보증금 30만원</span>
+          </li>
+
+          <li class="p-2.5 bg-brand-sand/60 rounded-xl flex justify-between items-center border border-brand-accent/30">
+            <div>
+              <p class="font-bold text-brand-dark">28박 이상 (한달 살기)</p>
+              <p class="text-[11px] text-brand-accent font-semibold">숙박 요금 20% 특별 할인</p>
+            </div>
+            <span class="font-bold text-stone-800">보증금 50만원</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: 인터랙티브 예약 캘린더 (달력 확인 및 자동 견적) -->
+  <section id="calendar" class="py-20 bg-brand-sand border-y border-brand-border">
+    <div class="max-w-5xl mx-auto px-6 md:px-12">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-1">Reservation Calendar</span>
+        <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">예약 가능일 확인 및 실시간 견적</h2>
+        <p class="text-stone-500 text-xs mt-1">달력에서 체크인과 체크아웃 날짜를 클릭해 보세요 (기본 3박 이상)</p>
+      </div>
+
+      <!-- 관리자 모드 상태 바 (로그인 시 노출) -->
+      <div id="adminBar" class="hidden mb-6 p-4 bg-stone-900 text-white rounded-2xl border border-stone-700 flex flex-wrap items-center justify-between gap-3 shadow-xl">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-amber-400 animate-pulse"></span>
+          <span class="font-bold text-xs text-amber-200">🛠️ 관리자 편집 모드 작동 중</span>
+          <span class="text-[11px] text-stone-400 hidden sm:inline">(달력의 날짜를 클릭하면 [예약완료 ↔ 예약가능]이 바로 전환됩니다)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="openHolidaySettingModal()" class="px-3 py-1.5 bg-rose-700 hover:bg-rose-600 text-white rounded-lg text-xs font-bold transition flex items-center gap-1 shadow-sm">
+            <span>📅 공휴일 관리</span>
+          </button>
+          <button onclick="openPriceSettingModal()" class="px-3 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-lg text-xs font-bold transition flex items-center gap-1 shadow-sm">
+            <span>⚙️ 요금 설정</span>
+          </button>
+          <button onclick="copyBookedDates()" class="px-3 py-1.5 bg-stone-700 hover:bg-stone-600 text-white rounded-lg text-xs transition">
+            📋 예약목록 복사
+          </button>
+          <button onclick="logoutAdmin()" class="px-3 py-1.5 bg-red-900 hover:bg-red-800 text-white rounded-lg text-xs transition">
+            관리자 종료
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- 달력 (왼쪽) -->
+        <div class="lg:col-span-7 bg-white p-6 rounded-2xl border border-brand-border shadow-sm">
+          <div class="flex justify-between items-center mb-6">
+            <button onclick="changeMonth(-1)" class="w-8 h-8 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-50 text-sm">‹</button>
+            <h3 id="calendarTitle" class="text-base font-bold text-brand-dark tracking-wider font-serif">2026. 10</h3>
+            <button onclick="changeMonth(1)" class="w-8 h-8 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-50 text-sm">›</button>
+          </div>
+
+          <div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-stone-400 mb-2">
+            <span class="text-red-500">일</span>
+            <span>월</span>
+            <span>화</span>
+            <span>수</span>
+            <span>목</span>
+            <span>금</span>
+            <span class="text-blue-500">토</span>
+          </div>
+
+          <div id="calendarDays" class="grid grid-cols-7 gap-1 text-center"></div>
+
+          <div class="flex items-center justify-between mt-6 pt-4 border-t border-stone-100 text-[11px] text-stone-500">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-white border border-stone-300"></span>예약가능</div>
+              <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-red-100 text-red-500 flex items-center justify-center text-[9px] line-through">1</span>예약완료</div>
+              <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-brand-dark"></span>선택일</div>
+            </div>
+            <!-- 관리자 로그인 버튼 -->
+            <button onclick="promptAdminLogin()" id="btnAdminLogin" class="text-stone-400 hover:text-stone-800 transition flex items-center gap-1 text-[11px]">
+              <span>🔒</span> <span>관리자</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 견적 요약창 (오른쪽) -->
+        <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+          <div>
+            <h4 class="text-base font-bold text-brand-dark mb-4 pb-2 border-b border-stone-100">선택 일정 견적 요약</h4>
+            
+            <div class="space-y-3 text-xs">
+              <div class="flex justify-between items-center">
+                <span class="text-stone-500">체크인:</span>
+                <span id="summaryCheckin" class="font-bold text-brand-dark">날짜를 선택하세요</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-stone-500">체크아웃:</span>
+                <span id="summaryCheckout" class="font-bold text-brand-dark">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-stone-500">총 숙박 기간:</span>
+                <span id="summaryNights" class="font-bold text-brand-dark">0박</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-stone-500">투숙 인원:</span>
+                <select id="guestCountSelect" onchange="updateSummary()" class="bg-stone-50 border border-stone-200 text-brand-dark rounded-lg px-2.5 py-1 font-semibold text-xs focus:outline-none focus:border-stone-500">
+                  <option value="4" selected>4인 (기본 요금)</option>
+                  <option value="5">5인 (+1만원/박)</option>
+                  <option value="6">6인 (+2만원/박)</option>
+                  <option value="7">7인 (+3만원/박)</option>
+                  <option value="8">8인 (+4만원/박)</option>
+                  <option value="9">9인 (+5만원/박)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 3박 알림 안내 -->
+            <div id="minNightNotice" class="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-800 leading-relaxed">
+              💡 희스테이는 <strong>기본 3박 이상</strong>부터 예약이 가능합니다. 달력에서 날짜를 클릭하여 체크인·체크아웃을 지정해 주세요.
+            </div>
+
+            <!-- 금액 세부 계산창 -->
+            <div id="priceDetails" class="hidden mt-4 pt-4 border-t border-stone-100 space-y-2 text-xs">
+              <div class="flex justify-between text-stone-600">
+                <span>기본 숙박비:</span>
+                <span id="basePriceText">0원</span>
+              </div>
+              <div class="flex justify-between text-stone-600" id="extraGuestRow" style="display:none;">
+                <span>인원 추가 요금:</span>
+                <span id="extraGuestPriceText" class="font-semibold text-stone-800">+0원</span>
+              </div>
+              <div class="flex justify-between text-emerald-600" id="discountRow" style="display:none;">
+                <span id="discountLabel">연박 할인:</span>
+                <span id="discountPriceText">-0원</span>
+              </div>
+
+              <!-- 예상 숙박 요금 -->
+              <div class="pt-3 border-t border-stone-200 flex justify-between items-baseline">
+                <span class="font-bold text-brand-dark text-sm">예상 숙박 요금:</span>
+                <div>
+                  <span id="finalPriceText" class="text-xl font-bold text-brand-accent">0</span>
+                  <span class="text-xs text-stone-500">원</span>
+                </div>
+              </div>
+
+              <!-- 예상 숙박 요금 아래에 보증금 & 공과금 실비 안내 별도 표시 -->
+              <div class="mt-3.5 p-3.5 bg-stone-50 rounded-xl border border-stone-200 text-xs">
+                <div class="flex justify-between items-center pb-2 border-b border-stone-200/80 mb-2">
+                  <span class="font-bold text-brand-dark flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    <span>공과금 정산 보증금 (별도)</span>
+                  </span>
+                  <span id="depositText" class="text-sm font-bold text-stone-900">200,000원</span>
+                </div>
+                <div class="text-[11px] text-stone-600">
+                  <p>공과금(전기·수도·가스) 실비 차감 후 환급해 드립니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 예약 문의 버튼 (카카오톡 및 전화 상담) -->
+          <div class="mt-6 pt-4 border-t border-stone-100 flex flex-col gap-2.5">
+            <a id="btnKakaoReserve" href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="w-full py-3.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-bold text-xs text-center rounded-xl transition shadow flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+              <span>카카오톡 1:1 예약 & 상담 문의</span>
+            </a>
+            <a href="tel:070-7954-1417" class="w-full py-3 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs text-center rounded-xl transition flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>전화 문의 (070-7954-1417)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: 풀옵션 구비시설 (요금 & 예약 달력 아래 배치 및 콤팩트 요약 디자인) -->
+  <section id="amenities" class="py-16 px-6 md:px-12 max-w-5xl mx-auto">
+    <div class="text-center max-w-xl mx-auto mb-10">
+      <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-1">Full Options</span>
+      <h2 class="text-2xl font-krSerif text-brand-dark">머무는 동안 불편함 없는 풀옵션 구비시설</h2>
+      <p class="text-stone-500 text-xs mt-1">단기 여행부터 한달 살기까지, 몸만 오셔도 편안한 완벽한 시설</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <!-- 1. 생활/스마트 가전 -->
+      <div class="bg-white p-5 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 mb-3">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-brand-dark mb-2">스마트 & 생활가전</h4>
+          <ul class="text-[11px] text-stone-600 space-y-1.5 leading-snug">
+            <li>• 시스템 에어컨 5대 (전 구역)</li>
+            <li>• 대형 스마트 TV & Wi-Fi</li>
+            <li>• 세탁기 & 세탁건조기 (세제 비치)</li>
+            <li>• 다이슨 무선청소기 & 드라이기 3개</li>
+            <li>• 레트로 오락기(게임기) 구비</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. 주방 & 다이닝 -->
+      <div class="bg-white p-5 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 mb-3">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-brand-dark mb-2">주방 & 다이닝</h4>
+          <ul class="text-[11px] text-stone-600 space-y-1.5 leading-snug">
+            <li>• 대형 냉장고 & 인덕션</li>
+            <li>• 전자레인지 겸용 오븐 & 밥솥</li>
+            <li>• 캡슐 커피머신 & 토스트기</li>
+            <li>• 6인 원목 식탁 & 아기의자</li>
+            <li>• 냄비/팬/조리도구/식기 풀세트</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. 침구 & 욕실 -->
+      <div class="bg-white p-5 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 mb-3">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-brand-dark mb-2">침실 & 욕실 (최대 9인)</h4>
+          <ul class="text-[11px] text-stone-600 space-y-1.5 leading-snug">
+            <li>• 침실 3개 (퀸 3개 + 슈퍼싱글 1개)</li>
+            <li>• 8~9인 추가 침구류 완비</li>
+            <li>• 독립 화장실 2실 (1층, 2층)</li>
+            <li>• 호텔식 침구 (고온 살균 세탁)</li>
+            <li>• 넉넉한 타월 & 세면 어메니티</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. 야외 & 레저 -->
+      <div class="bg-white p-5 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 mb-3">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v4M8 4l2 3M16 4l-2 3M5 11h14a7 7 0 01-14 0zM7 16l-2 5M17 16l2 5M12 16v5"/></svg>
+          </div>
+          <h4 class="text-xs font-bold text-brand-dark mb-2">야외 & 레저 (시설비 0원)</h4>
+          <ul class="text-[11px] text-stone-600 space-y-1.5 leading-snug">
+            <li>• 야외 풀장 (온수 가능 / 공과금 실비)</li>
+            <li>• 노천 자쿠지 스파 (공과금 실비)</li>
+            <li>• 사계절 바베큐 썬룸 (그릴 무료 대여)</li>
+            <li>• 석쇠/숯 직접구매 · 사용 후 세척 필수</li>
+            <li>• 130평 프라이빗 마당 & 돌담</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: 입실·퇴실 & 공과금 실비 세부 안내 & 이용수칙 (Guide & Utilities) -->
+  <section id="guide-fee" class="py-20 max-w-5xl mx-auto px-6 md:px-12">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-2">Stay Guide</span>
+      <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">입·퇴실 및 투명한 공과금 실비 안내</h2>
+      <p class="text-brand-muted text-xs md:text-sm mt-2 leading-relaxed">
+        비대면의 편리함과 실제 사용량에 따른 정직한 공과금 정산으로 더욱 안심하고 머무실 수 있습니다.
+      </p>
+    </div>
+
+    <!-- 입실 & 퇴실 카드 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      
+      <!-- 체크인/체크아웃 & 비대면 도어록 -->
+      <div class="bg-white p-7 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-accent">Check-In / Out</span>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-[11px] font-semibold rounded-full border border-stone-200">비대면 안심 입실</span>
+          </div>
+          <h3 class="text-base font-bold text-brand-dark mb-3">입실 16:00 / 퇴실 11:00</h3>
+          <ul class="space-y-3 text-xs text-stone-600 leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 flex-shrink-0"></span>
+              <span><strong>얼리 체크인 가능:</strong> 이전 이용객이 없거나 내부 정비 및 청소가 조기 완료되면 이른 입실도 가능합니다.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 flex-shrink-0"></span>
+              <span><strong>비대면 스마트 도어록:</strong> 예약 확정 후 입실 당일, <strong>예약자 전화번호 뒷자리 4자리</strong>로 현관 도어록 비밀번호가 자동 설정됩니다.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-400 mt-1.5 flex-shrink-0"></span>
+              <span><strong>보증금 정산 반환:</strong> 공과금 실비 검침 및 기물 점검 후 <strong>퇴실 1~2일 이내</strong> 지정 계좌로 안전하게 정산 반환해 드립니다.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-stone-100 text-[11px] text-stone-500 bg-stone-50 p-3 rounded-xl">
+          <strong>퇴실 전 체크리스트:</strong> 사용하신 수건 한곳에 모으기 · 가전 및 조명 전원 끄기 · 실내 환기 및 문 잠그기
+        </div>
+      </div>
+
+      <!-- 공과금 실비 세부 기준 & 계량기 확인 -->
+      <div class="bg-white p-7 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-accent">Utility Bill</span>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-[11px] font-semibold rounded-full border border-stone-200">실제 계량기 검침 정산</span>
+          </div>
+          <h3 class="text-base font-bold text-brand-dark mb-3">공과금 실비 세부 기준</h3>
+          <ul class="space-y-3 text-xs text-stone-600 leading-relaxed">
+            <li class="flex justify-between items-center pb-1.5 border-b border-stone-100">
+              <span class="font-semibold text-brand-dark">상수도</span>
+              <span>톤당 약 <strong>600원</strong> (월평균 1~2만원 / 수영장 1회 충수 시 약 4천원 예상)</span>
+            </li>
+            <li class="flex justify-between items-center pb-1.5 border-b border-stone-100">
+              <span class="font-semibold text-brand-dark">LPG 가스 (난방/온수)</span>
+              <span>루베당 약 <strong>5,080원</strong> (봄·여름 월평균 약 8만원 · 겨울 월평균 약 30만원)</span>
+            </li>
+            <li class="flex justify-between items-center pb-1.5 border-b border-stone-100">
+              <span class="font-semibold text-brand-dark">전기 요금</span>
+              <span><strong>1일 5,000원</strong> 정액제 (일반전기 + 자체 태양광 연계)</span>
+            </li>
+            <li class="text-[11px] text-stone-400 pt-1">
+              * 공과금은 평균 1일 1만원 내외 수준이며, 동절기 보일러 집중 가동 시 1일 2만원 이상 발생할 수 있습니다.
+            </li>
+          </ul>
+        </div>
+
+        <!-- 계량기 위치 안내 -->
+        <div class="mt-6 pt-4 border-t border-stone-100 text-xs">
+          <p class="font-bold text-stone-800 mb-1.5">직접 계량기 확인하는 위치:</p>
+          <div class="grid grid-cols-2 gap-2 text-[11px] text-stone-600">
+            <div class="p-2 bg-stone-50 rounded-lg">
+              <strong>수도:</strong> 대문 출입구 바닥 수도 뚜껑
+            </div>
+            <div class="p-2 bg-stone-50 rounded-lg">
+              <strong>가스:</strong> 건물 뒷편 대형 가스통 계량기
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 쓰레기 배출(클린하우스) & 숙소 이용수칙 안내 -->
+    <div class="bg-brand-sand rounded-2xl p-7 border border-brand-border">
+      <h3 class="text-base font-bold text-brand-dark mb-4 pb-2 border-b border-brand-border/60">쾌적한 이용을 위한 안내 & 주의사항</h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-stone-700">
+        
+        <!-- 금연 -->
+        <div class="bg-white p-4 rounded-xl border border-brand-border shadow-sm flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 flex-shrink-0">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+          </div>
+          <div>
+            <strong class="font-bold text-brand-dark block mb-0.5">실내 절대 금연</strong>
+            객실 내 전자담배 포함 완전 금연입니다. 외부 지정 구역을 이용해 주세요.
+          </div>
+        </div>
+
+        <!-- 바베큐 그릴 -->
+        <div class="bg-white p-4 rounded-xl border border-brand-border shadow-sm flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 flex-shrink-0">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+          </div>
+          <div>
+            <strong class="font-bold text-brand-dark block mb-0.5">석쇠·숯 직접구매 & 세척 필수</strong>
+            일회용 석쇠망과 숯은 직접 구매해 사용해 주시고, 이용 후 그릴 세척 및 청소를 부탁드립니다.
+          </div>
+        </div>
+
+        <!-- 쓰레기 클린하우스 -->
+        <div class="bg-white p-4 rounded-xl border border-brand-border shadow-sm flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 flex-shrink-0">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          </div>
+          <div>
+            <strong class="font-bold text-brand-dark block mb-0.5">클린하우스 분리배출</strong>
+            제주도는 지정 클린하우스 배출이 원칙입니다. 인근 클린하우스에 분리배출해 주세요.
+          </div>
+        </div>
+
+        <!-- 안전 수칙 -->
+        <div class="bg-white p-4 rounded-xl border border-brand-border shadow-sm flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 flex-shrink-0">
+            <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          </div>
+          <div>
+            <strong class="font-bold text-brand-dark block mb-0.5">수영장·난간 안전 주의</strong>
+            수영장 음주 입수 및 입욕제 사용 불가, 2층 테라스 난간 영유아 보호자 주의 필수.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: 성산 온평리 로컬 가이드 (주변 맛집 BEST 7 & 주변 관광지 BEST 8) -->
+  <section id="local-guide" class="py-20 bg-white border-t border-brand-border">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs uppercase tracking-[0.3em] text-brand-accent font-bold block mb-2">Local Guide</span>
+        <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">희스테이 주변 맛집 & 명소 가이드</h2>
+        <p class="text-stone-500 text-xs md:text-sm mt-2 leading-relaxed">
+          성산읍 온평리와 동부 해안을 여유롭게 만끽할 수 있는 호스트 추천 로컬 핫플레이스입니다.
+        </p>
+      </div>
+
+      <!-- 주변 맛집 BEST 7 -->
+      <div class="mb-14">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="w-2.5 h-2.5 rounded-full bg-stone-800"></span>
+          <h3 class="text-lg font-bold text-brand-dark">호스트 추천 주변 맛집 BEST 7</h3>
+          <span class="text-xs text-stone-400">온평리 및 성산 일대</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Seafood</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-1">삼대해녀의집 성산본점</h4>
+              <p class="text-xs text-stone-500 mt-1 leading-relaxed">해녀 직송 신선한 해산물 모듬, 물회, 전복죽 명가</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
+              차량 약 4분 · 성산 해안도로 인접
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Korean Cuisine</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-1">맛나식당</h4>
+              <p class="text-xs text-stone-500 mt-1 leading-relaxed">아침 일찍 번호표 뽑는 성산 최고의 갈치·고등어조림 성지</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
+              차량 약 10분 · 성산일출봉 방면
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Noodles</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-1">온평국수</h4>
+              <p class="text-xs text-stone-500 mt-1 leading-relaxed">담백하고 진한 사골 육수의 고기국수, 비빔국수, 바삭한 김치전</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
+              차량 약 3분 · 온평리 마을 안
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Jeju Pork</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-1">제주일도 성산점</h4>
+              <p class="text-xs text-stone-500 mt-1 leading-relaxed">정성스럽게 저온 숙성한 육즙 가득 프리미엄 제주 흑돼지 전문</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
+              차량 약 8분 · 섭지코지 인근
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Bakery & Cafe</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-1">프릳츠 제주성산점</h4>
+              <p class="text-xs text-stone-500 mt-1 leading-relaxed">성산일출봉 파노라마 뷰와 프리미엄 스페셜티 커피 & 빵</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
+              차량 약 7분 · 성산일출봉 조망
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Snack & Beer</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-1">목화휴게소</h4>
+              <p class="text-xs text-stone-500 mt-1 leading-relaxed">바다 바로 앞에서 구워주는 맥반석 반건조 오징어와 맥주 명소</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
+              차량 약 5분 · 해맞이해안로
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between sm:col-span-2 lg:col-span-2 xl:col-span-2">
+            <div>
+              <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Fresh Seafood</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-1">온평바다한그릇 성산본점</h4>
+              <p class="text-xs text-stone-500 mt-1 leading-relaxed">온평 바다를 그대로 담은 싱싱한 모듬 해산물 플래터와 얼큰한 해물라면</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
+              차량 약 3분 · 온평 포구 해안길
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 주변 관광지 BEST 8 -->
+      <div>
+        <div class="flex items-center gap-2 mb-6">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-accent"></span>
+          <h3 class="text-lg font-bold text-brand-dark">주변 대표 관광 명소 BEST 8</h3>
+          <span class="text-xs text-stone-400">숙소 반경 3~20분 거리</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <div class="p-5 rounded-2xl bg-brand-sand/50 border border-brand-border shadow-sm">
+            <span class="text-[11px] font-bold text-brand-accent block mb-1">01 · 차량 3분</span>
+            <h4 class="text-sm font-bold text-brand-dark">혼인지</h4>
+            <p class="text-xs text-stone-500 mt-1">탐라국 삼성혈 설화와 6월 수국이 만발하는 전통 연못</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-sand/50 border border-brand-border shadow-sm">
+            <span class="text-[11px] font-bold text-brand-accent block mb-1">02 · 차량 7분</span>
+            <h4 class="text-sm font-bold text-brand-dark">아쿠아플라넷 제주</h4>
+            <p class="text-xs text-stone-500 mt-1">아시아 최대 규모의 해양 생태계 아쿠아리움 & 공연</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-sand/50 border border-brand-border shadow-sm">
+            <span class="text-[11px] font-bold text-brand-accent block mb-1">03 · 차량 8분</span>
+            <h4 class="text-sm font-bold text-brand-dark">섭지코지</h4>
+            <p class="text-xs text-stone-500 mt-1">푸른 에메랄드 바다와 기암괴석, 유채꽃 해안 산책로</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-sand/50 border border-brand-border shadow-sm">
+            <span class="text-[11px] font-bold text-brand-accent block mb-1">04 · 차량 10분</span>
+            <h4 class="text-sm font-bold text-brand-dark">성산일출봉</h4>
+            <p class="text-xs text-stone-500 mt-1">유네스코 세계자연유산, 웅장한 분화구와 일출 명소</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-sand/50 border border-brand-border shadow-sm">
+            <span class="text-[11px] font-bold text-brand-accent block mb-1">05 · 차량 8분</span>
+            <h4 class="text-sm font-bold text-brand-dark">광치기해변</h4>
+            <p class="text-xs text-stone-500 mt-1">성산일출봉을 배경으로 한 신비로운 녹색 이끼 암반</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-sand/50 border border-brand-border shadow-sm">
+            <span class="text-[11px] font-bold text-brand-accent block mb-1">06 · 차량 12분</span>
+            <h4 class="text-sm font-bold text-brand-dark">빛의 벙커</h4>
+            <p class="text-xs text-stone-500 mt-1">옛 비밀 벙커를 거장들의 명화로 채운 몰입형 미디어아트</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-sand/50 border border-brand-border shadow-sm">
+            <span class="text-[11px] font-bold text-brand-accent block mb-1">07 · 차량 12분</span>
+            <h4 class="text-sm font-bold text-brand-dark">일출랜드 & 미천굴</h4>
+            <p class="text-xs text-stone-500 mt-1">신비로운 천연 용암동굴과 이국적인 아열대 정원</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-brand-sand/50 border border-brand-border shadow-sm">
+            <span class="text-[11px] font-bold text-brand-accent block mb-1">08 · 차량 20분</span>
+            <h4 class="text-sm font-bold text-brand-dark">비자림</h4>
+            <p class="text-xs text-stone-500 mt-1">천년의 피톤치드를 온몸으로 호흡하는 원시 비자나무 숲길</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 6: 위치 및 호스트 정보 -->
+  <section id="contact" class="py-16 bg-brand-sand border-t border-brand-border">
+    <div class="max-w-5xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-brand-accent font-bold block mb-1">Location & Info</span>
+          <h3 class="text-2xl font-krSerif text-brand-dark mb-3">제주 희스테이 오시는 길</h3>
+          <p class="text-xs text-stone-600 leading-relaxed mb-5">
+            제주특별자치도 서귀포시 성산읍 온평서로 28-7<br>
+            성산일출봉, 섭지코지와 인접한 고요하고 평화로운 바닷가 마을입니다.
+          </p>
+
+          <div class="space-y-1.5 text-xs text-stone-600 mb-6">
+            <p><strong>대표:</strong> 지희철 | <strong>사업자번호:</strong> 526-40-00959</p>
+            <p><strong>주소:</strong> 제주특별자치도 서귀포시 성산읍 온평서로 28-7</p>
+            <p><strong>전화:</strong> 070-7954-1417 | <strong>이메일:</strong> jejuheestay@gmail.com</p>
+            <p><strong>공식도메인:</strong> jejuheestay.co.kr</p>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <a href="https://map.naver.com/v5/search/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C%20%EC%84%B1%EC%82%B0%EC%9D%8D%20%EC%98%A8%ED%8F%89%EC%84%9C%EB%A1%9C%2028-7" target="_blank" class="px-4 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-lg text-xs font-semibold transition flex items-center gap-1.5">
+              <span>네이버 지도 바로가기</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="px-4 py-2.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-lg text-xs transition flex items-center gap-1.5 shadow-sm">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+              <span>카카오톡 문의</span>
+            </a>
+            <a href="tel:070-7954-1417" class="px-4 py-2.5 bg-white border border-stone-300 hover:bg-stone-100 text-brand-dark rounded-lg text-xs font-semibold transition flex items-center gap-1.5">
+              <span>전화 걸기</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden shadow-sm border border-brand-border">
+          <img src="./img/외관4.jpg" alt="희스테이 외관" class="w-full h-64 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-stone-900 text-stone-400 py-10 px-6 text-xs text-center border-t border-stone-800 pb-24 md:pb-10">
+    <p class="font-serif text-stone-200 text-lg tracking-widest mb-1">HEESTAY JEJU</p>
+    <p class="text-stone-500">상호명: 희스테이 | 대표자: 지희철 | 사업자번호: 526-40-00959 | 소재지: 제주특별자치도 서귀포시 성산읍 온평서로 28-7</p>
+    <p class="text-stone-600 mt-2">© 2026 HEESTAY. All rights reserved.</p>
+  </footer>
+
+  <!-- 모바일 하단 바 -->
+  <div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur border-t border-brand-border p-3 px-4 z-40 flex items-center justify-between shadow-lg md:hidden">
+    <div>
+      <span class="text-[10px] text-stone-400 block">기본 3박 이상 예약</span>
+      <span class="text-sm font-bold text-brand-dark">190,000원~</span>
+    </div>
+    <div class="flex gap-1.5">
+      <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="px-3 py-2 bg-[#FEE500] text-stone-900 font-bold rounded-lg text-xs flex items-center gap-1 shadow-sm">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+        카톡문의
+      </a>
+      <a href="tel:070-7954-1417" class="px-3 py-2 bg-brand-dark text-white rounded-lg text-xs font-bold flex items-center gap-1">
+        전화문의
+      </a>
+    </div>
+  </div>
+
+  <!-- 관리자 로그인 모달 -->
+  <div id="adminLoginModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border border-stone-700 text-white p-6 rounded-2xl max-w-sm w-full shadow-2xl">
+      <h3 class="text-base font-bold mb-2 flex items-center gap-2">
+        <span>🔒</span> 관리자 인증
+      </h3>
+      <p class="text-xs text-stone-400 mb-4 leading-relaxed">
+        관리자 비밀번호를 입력해 주세요.
+      </p>
+      <input type="password" id="adminPasswordInput" placeholder="비밀번호 입력" class="w-full bg-stone-800 border border-stone-600 rounded-xl px-4 py-2.5 text-sm text-white mb-4 focus:outline-none focus:border-amber-400">
+      <div class="flex gap-2">
+        <button onclick="closeAdminLoginModal()" class="flex-1 py-2.5 bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-semibold rounded-xl transition">
+          취소
+        </button>
+        <button onclick="checkAdminPassword()" class="flex-1 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded-xl transition">
+          로그인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 관리자 요금 설정 모달 -->
+  <div id="priceSettingModal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-stone-900 border border-stone-700 text-white p-6 rounded-3xl max-w-lg w-full shadow-2xl my-8">
+      <div class="flex justify-between items-center mb-4 pb-3 border-b border-stone-800">
+        <div>
+          <h3 class="text-base font-bold text-amber-200">⚙️ 숙박 요금 및 보증금 설정</h3>
+          <p class="text-[11px] text-stone-400 mt-0.5">설정하신 금액은 달력 견적 계산기와 요금표에 즉시 반영됩니다.</p>
+        </div>
+        <button onclick="closePriceSettingModal()" class="text-stone-400 hover:text-white text-sm">✕</button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <!-- 1박 기본 요금 -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-stone-300 font-semibold mb-1">평일 요금 (1박)</label>
+            <div class="relative">
+              <input type="number" id="cfgWeekday" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-white pr-7 focus:outline-none focus:border-amber-400">
+              <span class="absolute right-3 top-2 text-stone-400">원</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-stone-300 font-semibold mb-1">주말/공휴일 (1박)</label>
+            <div class="relative">
+              <input type="number" id="cfgWeekend" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-white pr-7 focus:outline-none focus:border-amber-400">
+              <span class="absolute right-3 top-2 text-stone-400">원</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-stone-300 font-semibold mb-1">성수기 1박 할증료 (7·8월, 명절)</label>
+          <div class="relative">
+            <input type="number" id="cfgPeak" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-white pr-7 focus:outline-none focus:border-amber-400">
+            <span class="absolute right-3 top-2 text-stone-400">원</span>
+          </div>
+        </div>
+
+        <!-- 보증금 체계 -->
+        <div class="pt-2 border-t border-stone-800">
+          <span class="text-[11px] text-amber-300 font-bold block mb-2">■ 보증금 체계 (공과금 실비 정산용)</span>
+          <div class="grid grid-cols-3 gap-2">
+            <div>
+              <label class="block text-stone-400 text-[10px] mb-1">7박 미만</label>
+              <input type="number" id="cfgDepUnder7" class="w-full bg-stone-800 border border-stone-700 rounded-lg px-2 py-1.5 text-xs text-white">
+            </div>
+            <div>
+              <label class="block text-stone-400 text-[10px] mb-1">7박 이상</label>
+              <input type="number" id="cfgDepOver7" class="w-full bg-stone-800 border border-stone-700 rounded-lg px-2 py-1.5 text-xs text-white">
+            </div>
+            <div>
+              <label class="block text-stone-400 text-[10px] mb-1">28박 이상</label>
+              <input type="number" id="cfgDepOver28" class="w-full bg-stone-800 border border-stone-700 rounded-lg px-2 py-1.5 text-xs text-white">
+            </div>
+          </div>
+        </div>
+
+        <!-- 인원 설정 (4인 기본, 초과 1인 1박당 요금) -->
+        <div class="pt-2 border-t border-stone-800 grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-stone-300 font-semibold mb-1">기본 투숙 인원</label>
+            <div class="relative">
+              <input type="number" id="cfgBaseGuests" value="4" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-white pr-7 focus:outline-none focus:border-amber-400">
+              <span class="absolute right-3 top-2 text-stone-400">명</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-stone-300 font-semibold mb-1">초과 1인 1박 요금</label>
+            <div class="relative">
+              <input type="number" id="cfgExtraGuestFee" value="10000" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-white pr-7 focus:outline-none focus:border-amber-400">
+              <span class="absolute right-3 top-2 text-stone-400">원</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 할인율 -->
+        <div class="pt-2 border-t border-stone-800 grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-stone-300 font-semibold mb-1">7박 이상 할인율 (%)</label>
+            <input type="number" id="cfgDisc7" min="0" max="100" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400">
+          </div>
+          <div>
+            <label class="block text-stone-300 font-semibold mb-1">28박 이상 할인율 (%)</label>
+            <input type="number" id="cfgDisc28" min="0" max="100" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400">
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-2 mt-6 pt-4 border-t border-stone-800">
+        <button onclick="resetDefaultConfig()" class="px-4 py-2.5 bg-stone-800 hover:bg-stone-700 text-stone-400 text-xs rounded-xl transition">
+          기본값 복원
+        </button>
+        <button onclick="savePriceConfig()" class="flex-1 py-2.5 bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs rounded-xl transition shadow">
+          설정 저장하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 관리자 공휴일 관리 모달 (네이버 달력 공휴일 및 연휴 반영) -->
+  <div id="holidaySettingModal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-stone-900 border border-stone-700 text-white p-6 rounded-3xl max-w-lg w-full shadow-2xl my-8">
+      <div class="flex justify-between items-center mb-4 pb-3 border-b border-stone-800">
+        <div>
+          <h3 class="text-base font-bold text-rose-300">📅 공휴일 및 명절 연휴 관리 (네이버 달력 기준)</h3>
+          <p class="text-[11px] text-stone-400 mt-0.5">등록된 공휴일은 달력에 빨간색 날짜와 명칭으로 표시됩니다.</p>
+        </div>
+        <button onclick="closeHolidaySettingModal()" class="text-stone-400 hover:text-white text-sm">✕</button>
+      </div>
+
+      <!-- 연도별 빠른 동기화 버튼 -->
+      <div class="mb-5 p-3.5 bg-stone-800/80 rounded-2xl border border-stone-700">
+        <span class="text-xs font-bold text-amber-200 block mb-2">⚡ 연도별 공휴일 자동 업데이트</span>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="syncHolidaysByYear(2025)" class="px-3 py-1.5 bg-stone-700 hover:bg-stone-600 rounded-lg text-xs font-semibold transition">
+            2025년 갱신
+          </button>
+          <button onclick="syncHolidaysByYear(2026)" class="px-3 py-1.5 bg-rose-700 hover:bg-rose-600 text-white rounded-lg text-xs font-bold transition">
+            2026년 갱신 (추천)
+          </button>
+          <button onclick="syncHolidaysByYear(2027)" class="px-3 py-1.5 bg-stone-700 hover:bg-stone-600 rounded-lg text-xs font-semibold transition">
+            2027년 갱신
+          </button>
+          <button onclick="syncHolidaysByYear(2028)" class="px-3 py-1.5 bg-stone-700 hover:bg-stone-600 rounded-lg text-xs font-semibold transition">
+            2028년 갱신
+          </button>
+          <button onclick="syncAllHolidaysPreset()" class="px-3 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-lg text-xs font-bold transition">
+            전체 연도 동기화
+          </button>
+        </div>
+        <p class="text-[10px] text-stone-400 mt-2">
+          * 설날·추석 연휴, 대체공휴일 등 네이버 달력 공식 공휴일이 자동 반영됩니다.
+        </p>
+      </div>
+
+      <!-- 직접 공휴일 추가 -->
+      <div class="mb-5 p-3.5 bg-stone-800/50 rounded-2xl border border-stone-700/80">
+        <span class="text-xs font-bold text-stone-200 block mb-2">➕ 공휴일 직접 추가 / 수정</span>
+        <div class="flex gap-2">
+          <input type="date" id="newHolidayDate" class="bg-stone-800 border border-stone-600 text-white text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-rose-400">
+          <input type="text" id="newHolidayName" placeholder="공휴일명 (예: 임시공휴일)" class="flex-1 bg-stone-800 border border-stone-600 text-white text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-rose-400">
+          <button onclick="addNewHoliday()" class="px-4 py-2 bg-rose-700 hover:bg-rose-600 text-white text-xs font-bold rounded-xl transition">
+            추가
+          </button>
+        </div>
+      </div>
+
+      <!-- 등록된 공휴일 목록 -->
+      <div class="mb-5">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-bold text-stone-300">현재 등록된 공휴일 목록 (<span id="holidayCountText">0</span>개)</span>
+          <button onclick="clearAllHolidays()" class="text-[11px] text-red-400 hover:underline">전체 비우기</button>
+        </div>
+        <div id="holidayListContainer" class="max-h-48 overflow-y-auto space-y-1.5 pr-1 text-xs">
+          <!-- JS 렌더링 -->
+        </div>
+      </div>
+
+      <div class="flex justify-end pt-3 border-t border-stone-800">
+        <button onclick="closeHolidaySettingModal()" class="px-5 py-2.5 bg-stone-700 hover:bg-stone-600 text-white text-xs font-semibold rounded-xl transition">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 사진 전체보기 모달 (34장 카테고리 갤러리) -->
+  <div id="allPhotosModal" class="fixed inset-0 bg-black/95 z-[70] hidden flex flex-col p-4 md:p-8 backdrop-blur-md">
+    <!-- 모달 상단 바 -->
+    <div class="max-w-6xl w-full mx-auto flex items-center justify-between pb-4 border-b border-stone-800 text-white flex-shrink-0">
+      <div>
+        <h3 class="text-base md:text-lg font-bold flex items-center gap-2">
+          <span>📷 희스테이 전체 사진 갤러리</span>
+          <span class="text-xs font-normal text-stone-400">(총 34장)</span>
+        </h3>
+        <p class="text-xs text-stone-400 mt-0.5">카테고리별로 희스테이의 모든 공간을 둘러보실 수 있습니다.</p>
+      </div>
+      <button onclick="closeAllPhotosModal()" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-stone-700 flex items-center justify-center text-stone-300 hover:text-white transition text-lg">✕</button>
+    </div>
+
+    <!-- 카테고리 필터 탭 -->
+    <div class="max-w-6xl w-full mx-auto py-3 overflow-x-auto flex items-center gap-2 flex-shrink-0 text-xs">
+      <button onclick="filterPhotos('all')" data-cat="all" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-white text-stone-900 shadow">전체 (34)</button>
+      <button onclick="filterPhotos('pool-jacuzzi')" data-cat="pool-jacuzzi" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300">수영장 & 자쿠지 (8)</button>
+      <button onclick="filterPhotos('exterior')" data-cat="exterior" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300">외관·마당 (3)</button>
+      <button onclick="filterPhotos('sunroom')" data-cat="sunroom" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300">바베큐 썬룸 (2)</button>
+      <button onclick="filterPhotos('living')" data-cat="living" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300">거실 & 뷰 (5)</button>
+      <button onclick="filterPhotos('kitchen')" data-cat="kitchen" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300">주방 & 다이닝 (6)</button>
+      <button onclick="filterPhotos('bedroom')" data-cat="bedroom" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300">침실 3개 (4)</button>
+      <button onclick="filterPhotos('bathroom')" data-cat="bathroom" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300">욕실 (2)</button>
+      <button onclick="filterPhotos('terrace')" data-cat="terrace" class="photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300">2층 테라스 (4)</button>
+    </div>
+
+    <!-- 사진 그리드 컨테이너 -->
+    <div class="max-w-6xl w-full mx-auto flex-1 overflow-y-auto pr-1 py-4">
+      <div id="allPhotosGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5">
+        <!-- JS로 동적 렌더링 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 사진 확대 모달 (좌우 넘김 + 하단 썸네일 스트립 + 키보드 화살표 지원) -->
+  <div id="photoModal" class="fixed inset-0 bg-black/95 z-[80] hidden flex flex-col justify-between p-3 sm:p-5 backdrop-blur-md select-none">
+    
+    <!-- 모달 상단 헤더 바 -->
+    <div class="max-w-5xl w-full mx-auto flex items-center justify-between text-white pb-2 flex-shrink-0">
+      <div class="flex items-center gap-2.5">
+        <span id="photoModalCounter" class="px-2.5 py-1 bg-stone-800 border border-stone-700 rounded-full text-xs font-mono font-bold text-amber-300">01 / 34</span>
+        <h4 id="photoModalTitle" class="text-sm font-bold truncate max-w-[200px] sm:max-w-md">사진 제목</h4>
+      </div>
+      <button onclick="closePhotoModal()" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-stone-700 flex items-center justify-center text-stone-300 hover:text-white transition text-lg" title="닫기 (ESC)">✕</button>
+    </div>
+
+    <!-- 중앙 뷰어 (이미지 + 좌우 화살표 버튼) -->
+    <div class="relative flex-1 flex items-center justify-center min-h-0 my-2">
+      <!-- 좌측 이전 버튼 -->
+      <button onclick="prevPhoto(event)" class="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition hover:scale-110 shadow-2xl border border-white/20" title="이전 사진 (키보드 ←)">
+        <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+
+      <!-- 메인 이미지 -->
+      <div class="h-full flex items-center justify-center p-1 sm:p-2">
+        <img id="photoModalImg" src="" alt="사진" class="max-h-[60vh] sm:max-h-[66vh] max-w-full object-contain rounded-xl shadow-2xl transition duration-200">
+      </div>
+
+      <!-- 우측 다음 버튼 -->
+      <button onclick="nextPhoto(event)" class="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition hover:scale-110 shadow-2xl border border-white/20" title="다음 사진 (키보드 →)">
+        <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- 하단 영역 (설명 + 34장 썸네일 가로 스트립) -->
+    <div class="max-w-4xl w-full mx-auto flex-shrink-0 text-center">
+      <p id="photoModalDesc" class="text-xs text-stone-300 truncate mb-2"></p>
+      
+      <!-- 34장 전체 가로 스크롤 썸네일 스트립 -->
+      <div id="photoThumbStrip" class="overflow-x-auto flex items-center gap-2 py-1 px-2 max-w-full mx-auto scrollbar-thin">
+        <!-- JS로 34장 썸네일 렌더링 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: 캘린더, 네이버 공휴일 반영, 관리자 토글 및 실시간 요금 계산기 -->
+  <script>
+    // 대한민국 공식 공휴일 프리셋 (2025 ~ 2028년 네이버 달력 및 법정 공휴일 완벽 반영)
+    const HOLIDAYS_PRESETS = {
+      // 2025년
+      "2025-01-01": "신정",
+      "2025-01-27": "설연휴(대체)",
+      "2025-01-28": "설날전날",
+      "2025-01-29": "설날",
+      "2025-01-30": "설날다음날",
+      "2025-03-01": "삼일절",
+      "2025-03-03": "대체공휴일",
+      "2025-05-05": "어린이날/부처님오신날",
+      "2025-05-06": "대체공휴일",
+      "2025-06-06": "현충일",
+      "2025-08-15": "광복절",
+      "2025-10-03": "개천절",
+      "2025-10-05": "추석전날",
+      "2025-10-06": "추석",
+      "2025-10-07": "추석다음날",
+      "2025-10-08": "대체공휴일",
+      "2025-10-09": "한글날",
+      "2025-12-25": "크리스마스",
+
+      // 2026년 (현재 기준 연도)
+      "2026-01-01": "신정",
+      "2026-02-16": "설날전날",
+      "2026-02-17": "설날",
+      "2026-02-18": "설날다음날",
+      "2026-03-01": "삼일절",
+      "2026-03-02": "대체공휴일",
+      "2026-05-05": "어린이날",
+      "2026-05-24": "부처님오신날",
+      "2026-05-25": "대체공휴일",
+      "2026-06-06": "현충일",
+      "2026-08-15": "광복절",
+      "2026-08-17": "대체공휴일",
+      "2026-09-24": "추석전날",
+      "2026-09-25": "추석",
+      "2026-09-26": "추석다음날",
+      "2026-10-03": "개천절",
+      "2026-10-05": "대체공휴일",
+      "2026-10-09": "한글날",
+      "2026-12-25": "크리스마스",
+
+      // 2027년
+      "2027-01-01": "신정",
+      "2027-02-06": "설날전날",
+      "2027-02-07": "설날",
+      "2027-02-08": "설날다음날",
+      "2027-02-09": "대체공휴일",
+      "2027-03-01": "삼일절",
+      "2027-05-05": "어린이날",
+      "2027-05-13": "부처님오신날",
+      "2027-06-06": "현충일",
+      "2027-06-07": "대체공휴일",
+      "2027-08-15": "광복절",
+      "2027-08-16": "대체공휴일",
+      "2027-09-14": "추석전날",
+      "2027-09-15": "추석",
+      "2027-09-16": "추석다음날",
+      "2027-10-03": "개천절",
+      "2027-10-04": "대체공휴일",
+      "2027-10-09": "한글날",
+      "2027-10-11": "대체공휴일",
+      "2027-12-25": "크리스마스",
+
+      // 2028년
+      "2028-01-01": "신정",
+      "2028-01-26": "설날전날",
+      "2028-01-27": "설날",
+      "2028-01-28": "설날다음날",
+      "2028-03-01": "삼일절",
+      "2028-05-02": "부처님오신날",
+      "2028-05-05": "어린이날",
+      "2028-06-06": "현충일",
+      "2028-08-15": "광복절",
+      "2028-10-02": "추석전날",
+      "2028-10-03": "개천절/추석",
+      "2028-10-04": "추석다음날",
+      "2028-10-05": "대체공휴일",
+      "2028-10-09": "한글날",
+      "2028-12-25": "크리스마스"
+    };
+
+    // 기본 설정값 (대표님이 설정창에서 자유롭게 변경 가능)
+    const DEFAULT_CONFIG = {
+      weekdayRate: 190000,
+      weekendRate: 210000,
+      peakExtra: 20000,
+      baseGuests: 4,
+      extraGuestFee: 10000,
+      depositUnder7: 200000,
+      depositOver7: 300000,
+      depositOver28: 500000,
+      discount7: 10,
+      discount28: 20
+    };
+
+    // 기본 예약완료 날짜 예시
+    const DEFAULT_BOOKED = [
+      '2026-10-02', '2026-10-03', '2026-10-04',
+      '2026-10-15', '2026-10-16', '2026-10-17'
+    ];
+
+    // 로컬스토리지에서 설정 및 공휴일 불러오기
+    let stayConfig = Object.assign({}, DEFAULT_CONFIG, JSON.parse(localStorage.getItem('HEESTAY_CONFIG')) || {});
+    let bookedDates = JSON.parse(localStorage.getItem('HEESTAY_BOOKED_DATES')) || DEFAULT_BOOKED;
+    let holidays = JSON.parse(localStorage.getItem('HEESTAY_HOLIDAYS')) || Object.assign({}, HOLIDAYS_PRESETS);
+
+    let isAdminMode = false;
+    let currentYear = 2026;
+    let currentMonth = 9; // 10월
+    let selectedCheckin = null;
+    let selectedCheckout = null;
+
+    // 헤더 스크롤 효과
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('mainHeader');
+      if (window.scrollY > 80) {
+        header.classList.add('bg-stone-900/90', 'backdrop-blur-md', 'shadow-md', 'py-3');
+        header.classList.remove('py-5');
+      } else {
+        header.classList.remove('bg-stone-900/90', 'backdrop-blur-md', 'shadow-md', 'py-3');
+        header.classList.add('py-5');
+      }
+    });
+
+    // 캘린더 렌더링 (네이버 달력 공휴일 빨간날 & 공휴일명 배지 반영)
+    function renderCalendar() {
+      const title = document.getElementById('calendarTitle');
+      const container = document.getElementById('calendarDays');
+      container.innerHTML = '';
+
+      const monthNames = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"];
+      title.innerText = `${currentYear}년 ${monthNames[currentMonth]}`;
+
+      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      const today = new Date();
+      today.setHours(0,0,0,0);
+
+      for (let i = 0; i < firstDay; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'cal-day text-transparent';
+        container.appendChild(empty);
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const thisDate = new Date(currentYear, currentMonth, day);
+        const dayOfWeek = thisDate.getDay(); // 0: 일, 6: 토
+        const holidayName = holidays[dateStr];
+
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'cal-day relative p-1';
+        dayDiv.dataset.date = dateStr;
+
+        // 날짜 텍스트 & 공휴일 명칭 표시 엘리먼트
+        let dayHtml = `<span>${day}</span>`;
+        if (holidayName) {
+          dayHtml += `<span class="text-[9px] text-red-600 font-medium block truncate max-w-full leading-none mt-0.5" title="${holidayName}">${holidayName}</span>`;
+        }
+        dayDiv.innerHTML = dayHtml;
+
+        // 공휴일 및 주말 색상 지정 (네이버 달력 스타일)
+        if (holidayName || dayOfWeek === 0) {
+          dayDiv.classList.add('text-red-500', 'font-semibold');
+        } else if (dayOfWeek === 6) {
+          dayDiv.classList.add('text-blue-500');
+        }
+
+        const isPast = thisDate < today;
+        const isBooked = bookedDates.includes(dateStr);
+
+        // 관리자 모드인 경우
+        if (isAdminMode) {
+          if (isBooked) {
+            dayDiv.classList.add('booked');
+            dayDiv.title = '[관리자] 클릭하면 예약 가능으로 변경됩니다';
+          } else {
+            dayDiv.classList.add('available');
+            dayDiv.title = '[관리자] 클릭하면 예약 완료로 변경됩니다';
+          }
+          dayDiv.style.cursor = 'pointer';
+          dayDiv.onclick = () => toggleBookedDate(dateStr);
+        } else {
+          // 일반 고객 모드
+          if (isPast) {
+            dayDiv.classList.add('past');
+          } else if (isBooked) {
+            dayDiv.classList.add('booked');
+            dayDiv.title = '예약 완료된 날짜입니다';
+          } else {
+            dayDiv.classList.add('available');
+
+            if (selectedCheckin === dateStr) {
+              dayDiv.classList.add('selected', 'range-start');
+            } else if (selectedCheckout === dateStr) {
+              dayDiv.classList.add('selected', 'range-end');
+            } else if (selectedCheckin && selectedCheckout && dateStr > selectedCheckin && dateStr < selectedCheckout) {
+              dayDiv.classList.add('in-range');
+            }
+
+            dayDiv.onclick = () => onSelectDate(dateStr);
+          }
+        }
+
+        container.appendChild(dayDiv);
+      }
+    }
+
+    function changeMonth(offset) {
+      currentMonth += offset;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      } else if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      renderCalendar();
+    }
+
+    // 관리자 모드: 날짜 원클릭 토글 (예약완료 ↔ 예약가능)
+    function toggleBookedDate(dateStr) {
+      const idx = bookedDates.indexOf(dateStr);
+      if (idx > -1) {
+        bookedDates.splice(idx, 1);
+      } else {
+        bookedDates.push(dateStr);
+      }
+      bookedDates.sort();
+      localStorage.setItem('HEESTAY_BOOKED_DATES', JSON.stringify(bookedDates));
+      renderCalendar();
+    }
+
+    // 고객 모드: 체크인/체크아웃 날짜 선택
+    function onSelectDate(dateStr) {
+      // 1. 체크인만 선택된 상태에서 같은 날짜를 다시 클릭하면 선택 해제
+      if (selectedCheckin === dateStr && !selectedCheckout) {
+        selectedCheckin = null;
+        selectedCheckout = null;
+        renderCalendar();
+        updateSummary();
+        return;
+      }
+
+      // 2. 체크인·체크아웃 모두 선택된 상태에서 선택된 날짜를 클릭하면 전체 해제
+      if (selectedCheckin && selectedCheckout && (dateStr === selectedCheckin || dateStr === selectedCheckout)) {
+        selectedCheckin = null;
+        selectedCheckout = null;
+        renderCalendar();
+        updateSummary();
+        return;
+      }
+
+      // 3. 아직 체크인이 없거나, 이미 체크인/체크아웃이 모두 완료된 상태라면 새로 체크인 시작
+      if (!selectedCheckin || (selectedCheckin && selectedCheckout)) {
+        selectedCheckin = dateStr;
+        selectedCheckout = null;
+      } 
+      // 4. 체크인만 있고 체크아웃을 선택하는 단계
+      else if (selectedCheckin && !selectedCheckout) {
+        if (dateStr < selectedCheckin) {
+          // 체크인보다 이전 날짜를 클릭하면 새로운 체크인 날짜로 변경
+          selectedCheckin = dateStr;
+          selectedCheckout = null;
+        } else {
+          // 체크인 이후 날짜 클릭 시 중간 예약 여부 검사
+          if (hasBookedDateBetween(selectedCheckin, dateStr)) {
+            alert('선택하신 기간 사이에 이미 예약 완료된 날짜가 포함되어 있어 체크아웃으로 지정할 수 없습니다.\n선택하신 날짜(' + dateStr + ')를 새로운 체크인 시작일로 변경합니다.');
+            selectedCheckin = dateStr;
+            selectedCheckout = null;
+          } else {
+            selectedCheckout = dateStr;
+          }
+        }
+      }
+      renderCalendar();
+      updateSummary();
+    }
+
+    function hasBookedDateBetween(start, end) {
+      for (const bDate of bookedDates) {
+        if (bDate >= start && bDate < end) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // 다음 날이 공휴일이거나 일요일인지 체크 (주말 요금 적용용)
+    function isNextDayHolidayOrSunday(dateObj) {
+      const nextDate = new Date(dateObj);
+      nextDate.setDate(nextDate.getDate() + 1);
+      const nextStr = `${nextDate.getFullYear()}-${String(nextDate.getMonth() + 1).padStart(2, '0')}-${String(nextDate.getDate()).padStart(2, '0')}`;
+      return Boolean(holidays[nextStr]) || nextDate.getDay() === 0;
+    }
+
+    // 실시간 견적 및 자동 계산 로직 (4인 기본 + 인원추가 + 공휴일/주말 요금 + 연박할인 + 보증금)
+    function updateSummary() {
+      const checkinEl = document.getElementById('summaryCheckin');
+      const checkoutEl = document.getElementById('summaryCheckout');
+      const nightsEl = document.getElementById('summaryNights');
+      const noticeEl = document.getElementById('minNightNotice');
+      const detailsEl = document.getElementById('priceDetails');
+
+      checkinEl.innerText = selectedCheckin || '날짜를 선택하세요';
+      checkoutEl.innerText = selectedCheckout || '-';
+
+      if (!selectedCheckin || !selectedCheckout) {
+        nightsEl.innerText = selectedCheckin ? '체크아웃 선택 중' : '0박';
+        detailsEl.classList.add('hidden');
+        noticeEl.classList.remove('hidden');
+        noticeEl.innerHTML = selectedCheckin 
+          ? `💡 체크인 날짜(<strong>${selectedCheckin}</strong>)가 선택되었습니다. 달력에서 체크아웃 날짜를 클릭해 주세요. (선택 취소: 날짜 다시 클릭)`
+          : '💡 희스테이는 <strong>기본 3박 이상</strong>부터 예약이 가능합니다. 달력에서 날짜를 클릭해 체크인·체크아웃을 지정해 주세요.';
+        return;
+      }
+
+      const d1 = new Date(selectedCheckin);
+      const d2 = new Date(selectedCheckout);
+      const diffTime = Math.abs(d2 - d1);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      nightsEl.innerText = `${diffDays}박 ${diffDays + 1}일`;
+
+      // 3박 미만인 경우
+      if (diffDays < 3) {
+        detailsEl.classList.add('hidden');
+        noticeEl.classList.remove('hidden');
+        noticeEl.innerHTML = `<span class="text-red-600 font-bold">⚠️ 선택하신 일정은 ${diffDays}박 ${diffDays + 1}일입니다. 희스테이는 기본 3박 이상부터 예약 가능합니다.</span> 일정을 3박 이상으로 선택해 주세요.`;
+        return;
+      }
+
+      noticeEl.classList.add('hidden');
+      detailsEl.classList.remove('hidden');
+
+      let weekdayCount = 0;
+      let weekendCount = 0;
+      let peakCount = 0;
+
+      let cur = new Date(d1);
+      while (cur < d2) {
+        const dayOfWeek = cur.getDay(); // 0:일, 5:금, 6:토
+        const month = cur.getMonth() + 1;
+        const curDateStr = `${cur.getFullYear()}-${String(cur.getMonth() + 1).padStart(2, '0')}-${String(cur.getDate()).padStart(2, '0')}`;
+        const isHolidayToday = Boolean(holidays[curDateStr]);
+        const isHolidayEve = isNextDayHolidayOrSunday(cur);
+
+        // 성수기 (7, 8월 또는 명절 연휴)
+        const isPeakPeriod = (month === 7 || month === 8) || (holidays[curDateStr] && (holidays[curDateStr].includes('설') || holidays[curDateStr].includes('추석')));
+        if (isPeakPeriod) peakCount++;
+
+        // 금요일, 토요일 또는 공휴일 전날/공휴일은 주말 요금 적용
+        if (dayOfWeek === 5 || dayOfWeek === 6 || isHolidayToday || isHolidayEve) {
+          weekendCount++;
+        } else {
+          weekdayCount++;
+        }
+        cur.setDate(cur.getDate() + 1);
+      }
+
+      // 인원 추가 요금 계산 (기본 4인 초과 시 1인 1박당)
+      const guestCount = parseInt(document.getElementById('guestCountSelect')?.value) || 4;
+      const baseGuests = stayConfig.baseGuests || 4;
+      const extraGuests = Math.max(0, guestCount - baseGuests);
+      const extraGuestFeePerNight = stayConfig.extraGuestFee || 10000;
+      const extraGuestTotal = extraGuests * extraGuestFeePerNight * diffDays;
+
+      const baseTotal = (weekdayCount * stayConfig.weekdayRate) + (weekendCount * stayConfig.weekendRate) + (peakCount * stayConfig.peakExtra);
+      const subtotalBeforeDiscount = baseTotal + extraGuestTotal;
+
+      // 연박 할인 및 보증금 산정
+      let discountRate = 0;
+      let deposit = stayConfig.depositUnder7;
+      let discountLabel = '';
+
+      if (diffDays >= 28) {
+        discountRate = stayConfig.discount28 / 100;
+        deposit = stayConfig.depositOver28;
+        discountLabel = `28박 이상 (한달살기 ${stayConfig.discount28}% 할인):`;
+      } else if (diffDays >= 7) {
+        discountRate = stayConfig.discount7 / 100;
+        deposit = stayConfig.depositOver7;
+        discountLabel = `7박 이상 (일주일살기 ${stayConfig.discount7}% 할인):`;
+      }
+
+      const discountAmount = Math.round(subtotalBeforeDiscount * discountRate);
+      const finalPrice = subtotalBeforeDiscount - discountAmount;
+
+      let baseText = `${baseTotal.toLocaleString()}원 (평일 ${weekdayCount}박 / 주말·공휴일 ${weekendCount}박`;
+      if (peakCount > 0) baseText += ` / 성수기 ${peakCount}박 포함`;
+      baseText += `)`;
+      document.getElementById('basePriceText').innerText = baseText;
+
+      // 인원 추가 줄 표시
+      const extraRow = document.getElementById('extraGuestRow');
+      if (extraGuestTotal > 0) {
+        extraRow.style.display = 'flex';
+        document.getElementById('extraGuestPriceText').innerText = `+${extraGuestTotal.toLocaleString()}원 (${extraGuests}명 초과 × ${diffDays}박)`;
+      } else {
+        extraRow.style.display = 'none';
+      }
+
+      const discRow = document.getElementById('discountRow');
+      if (discountRate > 0) {
+        discRow.style.display = 'flex';
+        document.getElementById('discountLabel').innerText = discountLabel;
+        document.getElementById('discountPriceText').innerText = `-${discountAmount.toLocaleString()}원`;
+      } else {
+        discRow.style.display = 'none';
+      }
+
+      document.getElementById('depositText').innerText = `${deposit.toLocaleString()}원`;
+      document.getElementById('finalPriceText').innerText = finalPrice.toLocaleString();
+    }
+
+    // 관리자 로그인 관련 함수
+    function promptAdminLogin() {
+      document.getElementById('adminLoginModal').classList.remove('hidden');
+      document.getElementById('adminPasswordInput').value = '';
+      document.getElementById('adminPasswordInput').focus();
+    }
+    function closeAdminLoginModal() {
+      document.getElementById('adminLoginModal').classList.add('hidden');
+    }
+    function checkAdminPassword() {
+      const pwd = document.getElementById('adminPasswordInput').value;
+      if (pwd === '1316') {
+        isAdminMode = true;
+        closeAdminLoginModal();
+        document.getElementById('adminBar').classList.remove('hidden');
+        document.getElementById('btnAdminLogin').classList.add('hidden');
+        renderCalendar();
+        alert('관리자 모드로 전환되었습니다. 달력의 날짜를 클릭하면 [예약완료 ↔ 예약가능] 상태가 즉시 토글됩니다.');
+      } else {
+        alert('비밀번호가 올바르지 않습니다.');
+      }
+    }
+    function logoutAdmin() {
+      isAdminMode = false;
+      document.getElementById('adminBar').classList.add('hidden');
+      document.getElementById('btnAdminLogin').classList.remove('hidden');
+      renderCalendar();
+      alert('관리자 모드가 종료되었습니다. 일반 고객 화면으로 돌아갑니다.');
+    }
+
+    // 요금 설정 모달 함수
+    function openPriceSettingModal() {
+      document.getElementById('cfgWeekday').value = stayConfig.weekdayRate;
+      document.getElementById('cfgWeekend').value = stayConfig.weekendRate;
+      document.getElementById('cfgPeak').value = stayConfig.peakExtra;
+      document.getElementById('cfgBaseGuests').value = stayConfig.baseGuests || 4;
+      document.getElementById('cfgExtraGuestFee').value = stayConfig.extraGuestFee || 10000;
+      document.getElementById('cfgDepUnder7').value = stayConfig.depositUnder7;
+      document.getElementById('cfgDepOver7').value = stayConfig.depositOver7;
+      document.getElementById('cfgDepOver28').value = stayConfig.depositOver28;
+      document.getElementById('cfgDisc7').value = stayConfig.discount7;
+      document.getElementById('cfgDisc28').value = stayConfig.discount28;
+      document.getElementById('priceSettingModal').classList.remove('hidden');
+    }
+    function closePriceSettingModal() {
+      document.getElementById('priceSettingModal').classList.add('hidden');
+    }
+    function savePriceConfig() {
+      stayConfig.weekdayRate = parseInt(document.getElementById('cfgWeekday').value) || 190000;
+      stayConfig.weekendRate = parseInt(document.getElementById('cfgWeekend').value) || 210000;
+      stayConfig.peakExtra = parseInt(document.getElementById('cfgPeak').value) || 20000;
+      stayConfig.baseGuests = parseInt(document.getElementById('cfgBaseGuests').value) || 4;
+      stayConfig.extraGuestFee = parseInt(document.getElementById('cfgExtraGuestFee').value) || 10000;
+      stayConfig.depositUnder7 = parseInt(document.getElementById('cfgDepUnder7').value) || 200000;
+      stayConfig.depositOver7 = parseInt(document.getElementById('cfgDepOver7').value) || 300000;
+      stayConfig.depositOver28 = parseInt(document.getElementById('cfgDepOver28').value) || 500000;
+      stayConfig.discount7 = parseInt(document.getElementById('cfgDisc7').value) || 10;
+      stayConfig.discount28 = parseInt(document.getElementById('cfgDisc28').value) || 20;
+
+      localStorage.setItem('HEESTAY_CONFIG', JSON.stringify(stayConfig));
+      closePriceSettingModal();
+      updateSummary();
+      alert('숙박 요금, 인원 추가료 및 보증금 설정이 안전하게 저장되었습니다!');
+    }
+    function resetDefaultConfig() {
+      if (confirm('모든 요금과 보증금을 기본값으로 복원하시겠습니까?')) {
+        stayConfig = { ...DEFAULT_CONFIG };
+        localStorage.setItem('HEESTAY_CONFIG', JSON.stringify(stayConfig));
+        openPriceSettingModal();
+        updateSummary();
+      }
+    }
+
+    // 공휴일 관리 모달 함수
+    function openHolidaySettingModal() {
+      renderHolidayList();
+      document.getElementById('holidaySettingModal').classList.remove('hidden');
+    }
+    function closeHolidaySettingModal() {
+      document.getElementById('holidaySettingModal').classList.add('hidden');
+    }
+
+    function renderHolidayList() {
+      const container = document.getElementById('holidayListContainer');
+      const countEl = document.getElementById('holidayCountText');
+      const sortedDates = Object.keys(holidays).sort();
+      countEl.innerText = sortedDates.length;
+      container.innerHTML = '';
+
+      if (sortedDates.length === 0) {
+        container.innerHTML = '<div class="text-stone-500 py-3 text-center">등록된 공휴일이 없습니다. 위 동기화 버튼을 눌러주세요.</div>';
+        return;
+      }
+
+      sortedDates.forEach(dateStr => {
+        const item = document.createElement('div');
+        item.className = 'flex justify-between items-center bg-stone-800 px-3 py-1.5 rounded-lg border border-stone-700';
+        item.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-rose-400 font-semibold">${dateStr}</span>
+            <span class="text-stone-300 font-bold">${holidays[dateStr]}</span>
+          </div>
+          <button onclick="deleteHoliday('${dateStr}')" class="text-[11px] text-red-400 hover:text-red-300 px-1.5 py-0.5 rounded">삭제</button>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    // 특정 연도 공휴일 동기화 (대표님 요청: 년도별로 업데이트 버튼)
+    function syncHolidaysByYear(year) {
+      let count = 0;
+      Object.keys(HOLIDAYS_PRESETS).forEach(dateStr => {
+        if (dateStr.startsWith(String(year))) {
+          holidays[dateStr] = HOLIDAYS_PRESETS[dateStr];
+          count++;
+        }
+      });
+      localStorage.setItem('HEESTAY_HOLIDAYS', JSON.stringify(holidays));
+      renderHolidayList();
+      renderCalendar();
+      updateSummary();
+      alert(`${year}년도 네이버 기준 공휴일 ${count}개가 성공적으로 업데이트되었습니다!`);
+    }
+
+    // 전체 프리셋 동기화
+    function syncAllHolidaysPreset() {
+      if (confirm('네이버 달력 기준 2025~2028년 전체 공휴일을 기본값으로 동기화하시겠습니까?')) {
+        holidays = Object.assign({}, HOLIDAYS_PRESETS);
+        localStorage.setItem('HEESTAY_HOLIDAYS', JSON.stringify(holidays));
+        renderHolidayList();
+        renderCalendar();
+        updateSummary();
+        alert('전체 연도 공휴일이 완벽히 동기화되었습니다!');
+      }
+    }
+
+    // 수동 공휴일 추가
+    function addNewHoliday() {
+      const date = document.getElementById('newHolidayDate').value;
+      const name = document.getElementById('newHolidayName').value.trim();
+      if (!date || !name) {
+        alert('날짜와 공휴일 명칭을 모두 입력해 주세요.');
+        return;
+      }
+      holidays[date] = name;
+      localStorage.setItem('HEESTAY_HOLIDAYS', JSON.stringify(holidays));
+      document.getElementById('newHolidayDate').value = '';
+      document.getElementById('newHolidayName').value = '';
+      renderHolidayList();
+      renderCalendar();
+      updateSummary();
+      alert(`[${date} ${name}] 공휴일이 추가되었습니다.`);
+    }
+
+    // 공휴일 개별 삭제
+    function deleteHoliday(dateStr) {
+      if (confirm(`'${dateStr} (${holidays[dateStr]})' 공휴일을 삭제하시겠습니까?`)) {
+        delete holidays[dateStr];
+        localStorage.setItem('HEESTAY_HOLIDAYS', JSON.stringify(holidays));
+        renderHolidayList();
+        renderCalendar();
+        updateSummary();
+      }
+    }
+
+    // 공휴일 전체 비우기
+    function clearAllHolidays() {
+      if (confirm('등록된 모든 공휴일을 삭제하시겠습니까? (필요시 연도별 갱신 버튼으로 언제든 복구할 수 있습니다)')) {
+        holidays = {};
+        localStorage.setItem('HEESTAY_HOLIDAYS', JSON.stringify(holidays));
+        renderHolidayList();
+        renderCalendar();
+        updateSummary();
+      }
+    }
+
+    // 예약 목록 클립보드 복사
+    function copyBookedDates() {
+      const text = JSON.stringify(bookedDates, null, 2);
+      navigator.clipboard.writeText(text).then(() => {
+        alert('현재 예약된 날짜 목록이 클립보드에 복사되었습니다:\n\n' + bookedDates.join(', '));
+      });
+    }
+
+    // 34장 전체 사진 데이터베이스
+    const ALL_PHOTOS = [
+      // 외관 & 마당 (3장)
+      { src: './img/외관1.jpg', cat: 'exterior', title: '희스테이 외관 전경', desc: '130평 프라이빗 대지와 제주 돌담이 어우러진 단독주택 풀빌라' },
+      { src: './img/외관3.jpg', cat: 'exterior', title: '야외 마당 및 외관', desc: '푸른 제주의 하늘과 여유로운 전원 풍경' },
+      { src: './img/외관4.jpg', cat: 'exterior', title: '단독주택 진입로 및 전경', desc: '조용하고 프라이빗한 온평리의 단독 풀빌라' },
+
+      // 수영장 (6장)
+      { src: './img/수영장1.jpg', cat: 'pool', title: '야외 전용 풀장', desc: '돌담 아래 펼쳐진 시원하고 프라이빗한 야외 수영장 (온수 공급 가능)' },
+      { src: './img/수영장2.jpg', cat: 'pool', title: '수영장 전경', desc: '우리 가족만의 여유로운 물놀이 공간' },
+      { src: './img/수영장3.jpg', cat: 'pool', title: '수영장 & 돌담 뷰', desc: '제주 감성이 물씬 풍기는 돌담과 수영장' },
+      { src: './img/수영장4.jpg', cat: 'pool', title: '수영장 풀뷰', desc: '맑고 깨끗한 수질의 단독 야외 풀' },
+      { src: './img/수영장테라스1.jpg', cat: 'pool', title: '수영장 데크 테라스', desc: '물놀이 중간에 편안하게 휴식할 수 있는 풀사이드 테라스' },
+      { src: './img/수영장테라스2.jpg', cat: 'pool', title: '풀사이드 라운지 데크', desc: '햇살을 받으며 일광욕과 휴식을 즐기는 야외 공간' },
+
+      // 노천 자쿠지 (2장)
+      { src: './img/자쿠지1.jpg', cat: 'jacuzzi', title: '감성 노천 자쿠지', desc: '성산의 맑은 공기와 밤하늘 별을 보며 즐기는 야외 온수 스파' },
+      { src: './img/자쿠지2.jpg', cat: 'jacuzzi', title: '노천 자쿠지 스파', desc: '여행의 피로를 사르르 녹여주는 사계절 프라이빗 스파' },
+
+      // 바베큐 썬룸 (2장)
+      { src: './img/썬룸1.jpg', cat: 'sunroom', title: '사계절 바베큐 썬룸', desc: '비바람을 완벽히 막아주는 독립 썬룸 바베큐 다이닝 공간' },
+      { src: './img/썬룸2.jpg', cat: 'sunroom', title: '썬룸 식탁 & 그릴', desc: '웨버 그릴과 대형 식탁이 완비된 아늑한 다이닝' },
+
+      // 거실 & 뷰 (5장)
+      { src: './img/거실2.jpg', cat: 'living', title: '1층 패밀리 거실', desc: '따뜻한 우드 톤의 편안한 소파와 채광이 가득한 거실' },
+      { src: './img/거실3.jpg', cat: 'living', title: '거실 라운지 뷰', desc: '통창 너머로 마당 풍경이 한눈에 들어오는 개방감' },
+      { src: './img/창1.jpg', cat: 'living', title: '통창 채광과 여백', desc: '햇살이 기분 좋게 쏟아지는 프레임 창' },
+      { src: './img/창2.jpg', cat: 'living', title: '마당을 담은 풍경 창', desc: '창밖으로 제주의 돌담과 자연이 펼쳐집니다' },
+      { src: './img/스피커.jpg', cat: 'living', title: '감성 블루투스 스피커', desc: '머무는 공간을 음악으로 채워주는 오디오 시스템' },
+
+      // 주방 & 다이닝 (6장)
+      { src: './img/주방1.jpg', cat: 'kitchen', title: '풀옵션 주방', desc: '조리에 필요한 모든 식기와 조리도구가 완비된 주방' },
+      { src: './img/주방2.jpg', cat: 'kitchen', title: '주방 설비 및 가전', desc: '대형 냉장고, 인덕션, 커피머신 완비' },
+      { src: './img/주방3.jpg', cat: 'kitchen', title: '다이닝 & 키친', desc: '가족이 함께 요리하고 식사할 수 있는 여유로운 동선' },
+      { src: './img/주방4.jpg', cat: 'kitchen', title: '주방 조리 공간', desc: '깔끔하고 청결하게 관리되는 오픈형 키친' },
+      { src: './img/주방6.jpg', cat: 'kitchen', title: '주방 수납 및 소형가전', desc: '전자레인지, 전기밥솥, 토스트기, 전기포트 완비' },
+      { src: './img/식탁2.jpg', cat: 'kitchen', title: '원목 다이닝 테이블', desc: '도란도란 식사를 즐길 수 있는 6인용 원목 식탁' },
+
+      // 침실 (4장)
+      { src: './img/방1.jpg', cat: 'bedroom', title: '2층 마스터 침실', desc: '퀸 침대와 슈퍼싱글 침대가 비치된 넓은 마스터 침실' },
+      { src: './img/방1화장대.jpg', cat: 'bedroom', title: '2층 침실 파우더룸 화장대', desc: '헤어드라이기와 넉넉한 수납공간을 갖춘 화장대' },
+      { src: './img/방2.jpg', cat: 'bedroom', title: '1층 침실 1 (퀸 베드)', desc: '아늑하고 정갈한 호텔식 침구가 세팅된 1층 독립 침실' },
+      { src: './img/방3.jpg', cat: 'bedroom', title: '1층 침실 2 (퀸 베드)', desc: '포근하고 조용한 휴식을 선사하는 또 하나의 침실' },
+
+      // 욕실 (2장)
+      { src: './img/욕실1.jpg', cat: 'bathroom', title: '1층 욕실 & 화장실', desc: '청결하고 쾌적한 1층 독립 욕실' },
+      { src: './img/욕실2.jpg', cat: 'bathroom', title: '2층 전용 욕실 & 화장실', desc: '2층 마스터룸과 연결된 편리한 전용 욕실' },
+
+      // 2층 테라스 (4장)
+      { src: './img/2층테라스1.jpg', cat: 'terrace', title: '2층 야외 전망 테라스', desc: '성산의 맑은 바람과 푸른 하늘을 감상하는 프라이빗 테라스' },
+      { src: './img/2층테라스2.jpg', cat: 'terrace', title: '2층 테라스 전경', desc: '모닝 커피나 티타임을 즐기기 좋은 전망 공간' },
+      { src: './img/2층테라스3.jpg', cat: 'terrace', title: '테라스 힐링 뷰', desc: '제주 마을과 수평선을 멀리 조망하는 쉼의 공간' },
+      { src: './img/2층테라스4.jpg', cat: 'terrace', title: '테라스 난간과 조망', desc: '시원한 바람과 함께 온전한 여유를 즐겨보세요' }
+    ];
+
+    let currentPhotoCategory = 'all';
+
+    // 전체 사진 모달 열기
+    function openAllPhotosModal(category = 'all') {
+      filterPhotos(category);
+      document.getElementById('allPhotosModal').classList.remove('hidden');
+    }
+
+    // 전체 사진 모달 닫기
+    function closeAllPhotosModal() {
+      document.getElementById('allPhotosModal').classList.add('hidden');
+    }
+
+    // 카테고리 필터링
+    function filterPhotos(cat) {
+      currentPhotoCategory = cat;
+
+      // 탭 스타일 갱신
+      document.querySelectorAll('.photo-tab-btn').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = 'photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-white text-stone-900 shadow';
+        } else {
+          btn.className = 'photo-tab-btn px-3.5 py-1.5 rounded-full font-semibold whitespace-nowrap transition bg-stone-800 hover:bg-stone-700 text-stone-300';
+        }
+      });
+
+      renderAllPhotosGrid();
+    }
+
+    // 갤러리 그리드 렌더링
+    function renderAllPhotosGrid() {
+      const grid = document.getElementById('allPhotosGrid');
+      grid.innerHTML = '';
+
+      let filtered = [];
+      if (currentPhotoCategory === 'all') {
+        filtered = ALL_PHOTOS;
+      } else if (currentPhotoCategory === 'pool-jacuzzi') {
+        filtered = ALL_PHOTOS.filter(p => p.cat === 'pool' || p.cat === 'jacuzzi');
+      } else {
+        filtered = ALL_PHOTOS.filter(p => p.cat === currentPhotoCategory);
+      }
+
+      filtered.forEach(photo => {
+        const item = document.createElement('div');
+        item.className = 'group cursor-pointer rounded-xl overflow-hidden bg-stone-800 border border-stone-700 shadow flex flex-col justify-between';
+        item.onclick = () => openPhotoModal(photo.src, photo.title, photo.desc);
+        item.innerHTML = `
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="${photo.src}" alt="${photo.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-2.5 bg-stone-900/90 text-white">
+            <h5 class="text-xs font-bold truncate">${photo.title}</h5>
+            <p class="text-[10px] text-stone-400 truncate mt-0.5">${photo.desc}</p>
+          </div>
+        `;
+        grid.appendChild(item);
+      });
+    }
+
+    let currentPhotoIndex = 0;
+
+    // 사진 확대 모달 열기 (src 기준 인덱스 탐색)
+    function openPhotoModal(src, title, desc) {
+      const idx = ALL_PHOTOS.findIndex(p => p.src === src);
+      if (idx > -1) {
+        currentPhotoIndex = idx;
+      } else {
+        currentPhotoIndex = 0;
+      }
+      renderPhotoModal();
+      document.getElementById('photoModal').classList.remove('hidden');
+    }
+
+    // 인덱스 기준 사진 모달 이동 (0~33 순환)
+    function openPhotoModalByIndex(idx) {
+      if (idx < 0) idx = ALL_PHOTOS.length - 1;
+      if (idx >= ALL_PHOTOS.length) idx = 0;
+      currentPhotoIndex = idx;
+      renderPhotoModal();
+    }
+
+    // 이전 사진 (◀)
+    function prevPhoto(e) {
+      if (e) e.stopPropagation();
+      openPhotoModalByIndex(currentPhotoIndex - 1);
+    }
+
+    // 다음 사진 (▶)
+    function nextPhoto(e) {
+      if (e) e.stopPropagation();
+      openPhotoModalByIndex(currentPhotoIndex + 1);
+    }
+
+    // 사진 모달 렌더링
+    function renderPhotoModal() {
+      const photo = ALL_PHOTOS[currentPhotoIndex];
+      if (!photo) return;
+
+      document.getElementById('photoModalImg').src = photo.src;
+      document.getElementById('photoModalTitle').innerText = photo.title;
+      document.getElementById('photoModalDesc').innerText = photo.desc;
+      
+      const numStr = String(currentPhotoIndex + 1).padStart(2, '0');
+      const totalStr = String(ALL_PHOTOS.length).padStart(2, '0');
+      document.getElementById('photoModalCounter').innerText = `${numStr} / ${totalStr}`;
+
+      renderPhotoThumbStrip();
+    }
+
+    // 하단 34장 썸네일 스트립 렌더링 및 현재 사진 하이라이트/자동스크롤
+    function renderPhotoThumbStrip() {
+      const strip = document.getElementById('photoThumbStrip');
+      if (!strip) return;
+      
+      if (strip.children.length !== ALL_PHOTOS.length) {
+        strip.innerHTML = '';
+        ALL_PHOTOS.forEach((p, i) => {
+          const thumb = document.createElement('img');
+          thumb.src = p.src;
+          thumb.alt = p.title;
+          thumb.className = 'w-14 h-10 object-cover rounded-md cursor-pointer transition flex-shrink-0 opacity-40 hover:opacity-100 border border-stone-700';
+          thumb.dataset.index = i;
+          thumb.onclick = () => openPhotoModalByIndex(i);
+          strip.appendChild(thumb);
+        });
+      }
+
+      const thumbs = strip.querySelectorAll('img');
+      thumbs.forEach((th, i) => {
+        if (i === currentPhotoIndex) {
+          th.className = 'w-14 h-10 object-cover rounded-md cursor-pointer transition flex-shrink-0 opacity-100 ring-2 ring-amber-400 scale-105 border-transparent shadow-lg';
+          th.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } else {
+          th.className = 'w-14 h-10 object-cover rounded-md cursor-pointer transition flex-shrink-0 opacity-40 hover:opacity-90 border border-stone-700';
+        }
+      });
+    }
+
+    // 모달 닫기
+    function closePhotoModal() {
+      document.getElementById('photoModal').classList.add('hidden');
+    }
+
+    // 키보드 방향키 및 ESC 단축키 지원
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('photoModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        if (e.key === 'ArrowLeft') {
+          prevPhoto();
+        } else if (e.key === 'ArrowRight') {
+          nextPhoto();
+        } else if (e.key === 'Escape') {
+          closePhotoModal();
+        }
+      }
+    });
+
+    // 초기 실행
+    renderCalendar();
+  </script>
+</body>
+</html>

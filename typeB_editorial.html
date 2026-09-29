@@ -1,0 +1,437 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>희스테이 HEESTAY | 제주 감성 단독주택 풀빌라 매거진</title>
+  <meta name="description" content="제주 성산 온평리 130평 대지 40평 단독주택 풀빌라. 수영장, 야외 자쿠지, 썬룸 바베큐장 추가요금 무료. 온전한 쉼을 위한 프라이빗 단독주택 스테이.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            earth: {
+              50: '#FDFBF7',
+              100: '#F7F2EA',
+              200: '#EBE2D5',
+              300: '#D5C4AF',
+              600: '#8A735B',
+              800: '#4A3B2C',
+              900: '#2C2219',
+            },
+            forest: {
+              800: '#2D3A31',
+              900: '#1D2620'
+            },
+            terracotta: '#A2583E'
+          },
+          fontFamily: {
+            myeongjo: ['Nanum Myeongjo', 'serif'],
+            serif: ['Playfair Display', 'Nanum Myeongjo', 'serif'],
+            sans: ['Pretendard', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #FDFBF7; color: #2C2219; font-family: 'Pretendard', sans-serif; }
+    .font-editorial { font-family: 'Playfair Display', 'Nanum Myeongjo', serif; }
+    .font-hangul-myeongjo { font-family: 'Nanum Myeongjo', serif; }
+  </style>
+</head>
+<body class="selection:bg-amber-100 selection:text-stone-900">
+
+  <!-- 상단 시안 전환 바 -->
+  <div class="bg-forest-900 text-stone-200 text-xs py-2 px-4 flex justify-between items-center fixed top-0 w-full z-50 backdrop-blur-md bg-opacity-95">
+    <div class="flex items-center space-x-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+      <span class="font-medium text-amber-200">[시안 B]</span>
+      <span class="text-stone-300 hidden sm:inline">제주 내추럴 & 킨포크 에디토리얼 감성 매거진</span>
+    </div>
+    <div class="flex items-center space-x-3">
+      <span class="text-stone-400">다른 시안 보기:</span>
+      <a href="./typeA_minimal.html" class="px-2 py-0.5 bg-forest-800 hover:bg-forest-700 rounded border border-stone-600 transition text-stone-200">시안 A (미니멀 럭셔리) →</a>
+    </div>
+  </div>
+
+  <!-- Editorial Top Nav -->
+  <header class="fixed top-8 w-full z-40 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-earth-200 py-4 px-6 md:px-16 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="text-xs uppercase tracking-[0.2em] text-earth-600 hidden md:block">
+        Issue 01 · Jeju Private Villa
+      </div>
+
+      <a href="#" class="text-center">
+        <h1 class="text-2xl md:text-3xl font-editorial font-bold tracking-widest text-earth-900">HEESTAY</h1>
+        <p class="text-[10px] tracking-[0.25em] text-earth-600 uppercase font-sans">Jeju Seongsan Onpyeong</p>
+      </a>
+
+      <div class="flex items-center space-x-6 text-xs uppercase tracking-wider font-medium text-earth-800">
+        <a href="#story" class="hidden sm:inline hover:text-terracotta transition">Story</a>
+        <a href="#gallery" class="hidden sm:inline hover:text-terracotta transition">Photo Book</a>
+        <a href="#floors" class="hidden sm:inline hover:text-terracotta transition">Floor Plan</a>
+        <a href="#rates" class="hidden sm:inline hover:text-terracotta transition">Rates</a>
+        <a href="tel:070-7954-1417" class="px-3.5 py-1.5 bg-forest-800 text-white rounded font-sans hover:bg-forest-900 transition">
+          070-7954-1417
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero: Magazine Cover Style -->
+  <section class="pt-32 pb-16 px-6 md:px-16 max-w-7xl mx-auto">
+    <div class="border-b border-earth-300 pb-12">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+        <div>
+          <span class="text-xs font-serif uppercase tracking-[0.3em] text-terracotta font-semibold">Stay in Nature</span>
+          <h2 class="text-3xl md:text-6xl font-hangul-myeongjo font-bold text-earth-900 mt-2 leading-tight">
+            성산의 고요한 돌담길 끝,<br>
+            우리만의 푸른 안식처
+          </h2>
+        </div>
+        <p class="text-earth-600 text-sm md:text-base max-w-md font-hangul-myeongjo leading-relaxed">
+          130평 너른 대지에 하루 단 한 가족만을 모십니다.<br>
+          수영장, 자쿠지, 썬룸 바베큐까지 모든 공간이 추가 요금 없이 당신의 쉼이 됩니다.
+        </p>
+      </div>
+
+      <!-- 메인 매거진 포토 3단 레이아웃 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+        <!-- 메인 큰 컷 (외관 / 수영장) -->
+        <div class="md:col-span-8 rounded-2xl overflow-hidden shadow-md group relative">
+          <img src="./img/외관1.jpg" alt="희스테이 외관" class="w-full h-[460px] object-cover group-hover:scale-102 transition duration-700">
+          <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded text-xs font-sans">
+            HEESTAY EXTERIOR · 온평리 단독주택
+          </div>
+        </div>
+
+        <!-- 서브 2단 컷 -->
+        <div class="md:col-span-4 flex flex-col gap-4">
+          <div class="rounded-2xl overflow-hidden shadow-md h-[222px] group relative">
+            <img src="./img/수영장1.jpg" alt="수영장" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md text-earth-900 px-2.5 py-1 rounded text-[11px] font-medium">
+              야외 전용 수영장 (무료 이용)
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md h-[222px] group relative">
+            <img src="./img/자쿠지1.jpg" alt="야외 자쿠지" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md text-earth-900 px-2.5 py-1 rounded text-[11px] font-medium">
+              노천 자쿠지 온수 스파
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4가지 매거진 포인트 뱃지 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-earth-200">
+        <div>
+          <span class="text-xs text-earth-600 block">SCALE</span>
+          <p class="text-lg font-bold text-earth-900 font-hangul-myeongjo">130평 대지 40평 단독주택</p>
+          <p class="text-xs text-stone-500 mt-0.5">단독 2층 건물 전체 단독 사용</p>
+        </div>
+        <div>
+          <span class="text-xs text-earth-600 block">CAPACITY</span>
+          <p class="text-lg font-bold text-earth-900 font-hangul-myeongjo">기본 6인 침대 구비</p>
+          <p class="text-xs text-stone-500 mt-0.5">방 3개, 화장실 2개, 퀸 3 + 싱글 1</p>
+        </div>
+        <div>
+          <span class="text-xs text-terracotta font-semibold block">ALL-INCLUSIVE</span>
+          <p class="text-lg font-bold text-terracotta font-hangul-myeongjo">옵션 추가요금 0원</p>
+          <p class="text-xs text-stone-500 mt-0.5">수영장·자쿠지·바베큐 무상 제공</p>
+        </div>
+        <div>
+          <span class="text-xs text-earth-600 block">LOCATION</span>
+          <p class="text-lg font-bold text-earth-900 font-hangul-myeongjo">성산 온평리</p>
+          <p class="text-xs text-stone-500 mt-0.5">섭지코지 & 성산일출봉 인근</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section: 제주 희스테이 감성 무비 -->
+  <section class="py-16 bg-forest-900 text-white">
+    <div class="max-w-6xl mx-auto px-6 md:px-16 text-center">
+      <span class="text-xs uppercase tracking-[0.3em] text-amber-300 font-serif block mb-2">Cinematic Preview</span>
+      <h3 class="text-2xl md:text-4xl font-hangul-myeongjo font-bold mb-4">영상으로 미리 걷는 희스테이</h3>
+      <p class="text-stone-300 text-xs md:text-sm max-w-xl mx-auto mb-8 font-light">
+        햇살이 스며드는 거실과 푸른 수영장, 돌담 너머로 들려오는 바람 소리를 영상으로 만나보세요.
+      </p>
+      
+      <div class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-stone-700 bg-black">
+        <video controls playsinline class="w-full h-auto max-h-[500px] mx-auto object-cover">
+          <source src="./jejuheesatay-movie.mp4" type="video/mp4">
+          브라우저가 비디오 태그를 지원하지 않습니다.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Floor Guide (인터랙티브 층별 안내) -->
+  <section id="floors" class="py-24 max-w-6xl mx-auto px-6 md:px-16">
+    <div class="text-center mb-16">
+      <span class="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold block mb-1">Architecture</span>
+      <h3 class="text-3xl md:text-4xl font-hangul-myeongjo font-bold text-earth-900">1·2층 공간 큐레이션</h3>
+      <p class="text-earth-600 text-xs md:text-sm mt-2">두 가족이 와도 넉넉한 독립된 층별 침실 구조</p>
+    </div>
+
+    <!-- 층 탭 선택 -->
+    <div class="flex justify-center gap-4 mb-10">
+      <button onclick="switchFloor('floor1')" id="btnFloor1" class="px-6 py-2.5 rounded-full font-medium text-sm bg-forest-800 text-white shadow transition">
+        1층 : 거실 · 주방 · 침실 2개 · 세탁실
+      </button>
+      <button onclick="switchFloor('floor2')" id="btnFloor2" class="px-6 py-2.5 rounded-full font-medium text-sm bg-earth-200 text-earth-800 hover:bg-earth-300 transition">
+        2층 : 안방(마스터룸) · 테라스 전망대
+      </button>
+    </div>
+
+    <!-- 1층 내용 -->
+    <div id="contentFloor1" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-earth-100/70 p-8 rounded-3xl border border-earth-200">
+      <div class="lg:col-span-5 space-y-4">
+        <span class="px-3 py-1 bg-terracotta text-white text-xs font-semibold rounded-full uppercase">1st Floor Overview</span>
+        <h4 class="text-2xl font-hangul-myeongjo font-bold text-earth-900">다 함께 모이는 따뜻한 거실과 주방</h4>
+        <p class="text-earth-800 text-sm leading-relaxed">
+          통창을 통해 쏟아지는 햇살 아래 넓은 소파와 대형 식탁이 놓여있습니다.
+          간단한 조리가 가능한 풀옵션 주방과 세탁기, 그리고 퀸 침대가 각각 비치된 독립 룸 2개가 마련되어 있습니다.
+        </p>
+        <ul class="text-xs text-earth-800 space-y-2 pt-2">
+          <li class="flex items-center gap-2">✓ <strong>거실:</strong> 편안한 소파 & 블루투스 스피커</li>
+          <li class="flex items-center gap-2">✓ <strong>주방:</strong> 인덕션, 전자레인지, 냉장고, 조리도구 완비</li>
+          <li class="flex items-center gap-2">✓ <strong>침실:</strong> 퀸 사이즈 베드룸 2실</li>
+          <li class="flex items-center gap-2">✓ <strong>욕실 & 세탁실:</strong> 세탁기 및 세제 기본 비치</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-2 gap-3">
+        <img src="./img/거실2.jpg" alt="1층 거실" class="w-full h-48 object-cover rounded-xl shadow-sm">
+        <img src="./img/주방1.jpg" alt="1층 주방" class="w-full h-48 object-cover rounded-xl shadow-sm">
+        <img src="./img/방2.jpg" alt="1층 침실" class="w-full h-48 object-cover rounded-xl shadow-sm">
+        <img src="./img/식탁2.jpg" alt="식탁" class="w-full h-48 object-cover rounded-xl shadow-sm">
+      </div>
+    </div>
+
+    <!-- 2층 내용 (기본 숨김) -->
+    <div id="contentFloor2" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-earth-100/70 p-8 rounded-3xl border border-earth-200">
+      <div class="lg:col-span-5 space-y-4">
+        <span class="px-3 py-1 bg-forest-800 text-white text-xs font-semibold rounded-full uppercase">2nd Floor Overview</span>
+        <h4 class="text-2xl font-hangul-myeongjo font-bold text-earth-900">여유로운 마스터 베드룸 & 전망 테라스</h4>
+        <p class="text-earth-800 text-sm leading-relaxed">
+          2층 전체는 프라이빗한 안방 구조로 설계되었습니다.
+          퀸 침대와 슈퍼싱글 침대가 함께 있어 가족 단위 투숙객이 편안히 휴식할 수 있으며,
+          문 밖으로 나가면 성산의 맑은 바람을 만끽할 수 있는 야외 테라스가 펼쳐집니다.
+        </p>
+        <ul class="text-xs text-earth-800 space-y-2 pt-2">
+          <li class="flex items-center gap-2">✓ <strong>마스터룸:</strong> 퀸 침대 1 + 슈퍼싱글 1</li>
+          <li class="flex items-center gap-2">✓ <strong>파우더 & 욕실:</strong> 2층 단독 사용 전용 욕실</li>
+          <li class="flex items-center gap-2">✓ <strong>야외 테라스:</strong> 의자에 앉아 만끽하는 제주 풍경</li>
+          <li class="flex items-center gap-2 text-stone-500">※ 2층 난간은 어린이에 위험할 수 있으니 안전에 유의해 주세요.</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-2 gap-3">
+        <img src="./img/방1.jpg" alt="2층 안방" class="w-full h-48 object-cover rounded-xl shadow-sm">
+        <img src="./img/2층테라스1.jpg" alt="2층 테라스" class="w-full h-48 object-cover rounded-xl shadow-sm">
+        <img src="./img/방1화장대.jpg" alt="화장대" class="w-full h-48 object-cover rounded-xl shadow-sm">
+        <img src="./img/2층테라스3.jpg" alt="테라스 풍경" class="w-full h-48 object-cover rounded-xl shadow-sm">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Photo Book Grid (인스타그램 매거진 감성) -->
+  <section id="gallery" class="py-20 bg-white border-y border-earth-200">
+    <div class="max-w-7xl mx-auto px-6 md:px-16">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold block mb-1">Visual Diary</span>
+          <h3 class="text-3xl md:text-4xl font-hangul-myeongjo font-bold text-earth-900">희스테이의 포토 앨범</h3>
+        </div>
+        <p class="text-xs text-earth-600 mt-2 md:mt-0 font-sans">
+          사진을 클릭하시면 고화질 원본으로 자세히 보실 수 있습니다
+        </p>
+      </div>
+
+      <!-- 감성 비대칭 그리드 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="space-y-4">
+          <img src="./img/수영장테라스1.jpg" alt="수영장 테라스" class="rounded-xl object-cover w-full h-64 hover:opacity-95 transition shadow-sm cursor-pointer" onclick="openPhoto(this.src, '수영장 테라스')">
+          <img src="./img/창1.jpg" alt="감성 창가" class="rounded-xl object-cover w-full h-44 hover:opacity-95 transition shadow-sm cursor-pointer" onclick="openPhoto(this.src, '감성 창가 풍경')">
+        </div>
+        <div class="space-y-4">
+          <img src="./img/자쿠지2.jpg" alt="야외 자쿠지" class="rounded-xl object-cover w-full h-44 hover:opacity-95 transition shadow-sm cursor-pointer" onclick="openPhoto(this.src, '야외 자쿠지')">
+          <img src="./img/썬룸2.jpg" alt="바베큐 썬룸" class="rounded-xl object-cover w-full h-64 hover:opacity-95 transition shadow-sm cursor-pointer" onclick="openPhoto(this.src, '바베큐 썬룸')">
+        </div>
+        <div class="space-y-4">
+          <img src="./img/스피커.jpg" alt="감성 오디오" class="rounded-xl object-cover w-full h-64 hover:opacity-95 transition shadow-sm cursor-pointer" onclick="openPhoto(this.src, '거실 오브제')">
+          <img src="./img/욕실2.jpg" alt="욕실" class="rounded-xl object-cover w-full h-44 hover:opacity-95 transition shadow-sm cursor-pointer" onclick="openPhoto(this.src, '깔끔한 욕실')">
+        </div>
+        <div class="space-y-4">
+          <img src="./img/외관3.jpg" alt="외관 야경" class="rounded-xl object-cover w-full h-44 hover:opacity-95 transition shadow-sm cursor-pointer" onclick="openPhoto(this.src, '외관 야경')">
+          <img src="./img/주방3.jpg" alt="주방 디테일" class="rounded-xl object-cover w-full h-64 hover:opacity-95 transition shadow-sm cursor-pointer" onclick="openPhoto(this.src, '주방 디테일')">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Rates & Reservation -->
+  <section id="rates" class="py-24 max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold block mb-1">Pricing Policy</span>
+      <h3 class="text-3xl md:text-4xl font-hangul-myeongjo font-bold text-earth-900">이용 요금 및 할인 혜택</h3>
+      <p class="text-earth-600 text-xs md:text-sm mt-2">부담 없는 가격과 투명한 공과금 실비 정책</p>
+    </div>
+
+    <!-- 카드 2개 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white p-8 rounded-3xl border border-earth-300 shadow-sm relative overflow-hidden">
+        <h4 class="text-xl font-bold font-hangul-myeongjo text-earth-900 mb-4">단기 숙박 기본 요금</h4>
+        <div class="space-y-4 text-sm text-earth-800">
+          <div class="flex justify-between items-center py-2.5 border-b border-earth-200">
+            <span class="font-medium">평일 (일 ~ 목)</span>
+            <span class="text-xl font-bold text-forest-800">190,000원 <span class="text-xs font-normal text-stone-500">/ 1박</span></span>
+          </div>
+          <div class="flex justify-between items-center py-2.5 border-b border-earth-200">
+            <span class="font-medium">주말 & 공휴일 (금, 토, 공휴일)</span>
+            <span class="text-xl font-bold text-forest-800">210,000원 <span class="text-xs font-normal text-stone-500">/ 1박</span></span>
+          </div>
+          <div class="p-3 bg-amber-50 rounded-xl text-xs text-amber-900 border border-amber-200">
+            <strong>성수기 추가 요금:</strong> 7월, 8월, 추석, 설 연휴 1박당 +20,000원
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-earth-100 p-8 rounded-3xl border border-earth-300 shadow-sm">
+        <h4 class="text-xl font-bold font-hangul-myeongjo text-earth-900 mb-4">제주 살아보기 (연박 특별할인)</h4>
+        <div class="space-y-4 text-sm text-earth-800">
+          <div class="p-4 bg-white rounded-2xl border border-earth-200 flex justify-between items-center">
+            <div>
+              <p class="font-bold text-earth-900">7박 이상 숙박</p>
+              <p class="text-xs text-earth-600 mt-0.5">보증금 30만원 (공과금 정산 후 환급)</p>
+            </div>
+            <span class="text-xl font-bold text-terracotta">10% 할인</span>
+          </div>
+
+          <div class="p-4 bg-white rounded-2xl border border-earth-200 flex justify-between items-center">
+            <div>
+              <p class="font-bold text-earth-900">28박 이상 (한달살기)</p>
+              <p class="text-xs text-earth-600 mt-0.5">보증금 50만원 (공과금 정산 후 환급)</p>
+            </div>
+            <span class="text-xl font-bold text-terracotta">20% 할인</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 주의사항 인포박스 -->
+    <div class="bg-white p-8 rounded-3xl border border-earth-300 shadow-sm">
+      <h4 class="font-bold text-earth-900 text-base mb-4 flex items-center gap-2">
+        <span>📌</span> 숙소 이용 시 꼭 확인해 주세요
+      </h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-earth-700 leading-relaxed">
+        <div class="flex items-start gap-2">
+          <span class="text-red-500 font-bold">•</span>
+          <span><strong>실내 흡연 금지:</strong> 쾌적한 환경을 위해 실내 절대 금연입니다.</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-forest-800 font-bold">•</span>
+          <span><strong>바베큐 그릴:</strong> 비치된 그릴 사용 후 꼭 세척 부탁드립니다.</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-forest-800 font-bold">•</span>
+          <span><strong>쓰레기 배출:</strong> 이용 중 쓰레기는 부근 클린하우스를 이용해 주세요.</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-amber-600 font-bold">•</span>
+          <span><strong>2층 난간 안전:</strong> 어린이가 있는 경우 난간 안전에 각별히 유의해 주세요.</span>
+        </div>
+        <div class="flex items-start gap-2 sm:col-span-2">
+          <span class="text-blue-600 font-bold">•</span>
+          <span><strong>수영장 음주입수 금지:</strong> 안전사고 예방을 위해 음주 후 입수는 절대 금지됩니다.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Host & Location -->
+  <section class="py-20 bg-earth-100 border-t border-earth-200">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold block mb-2">Reservation & Inquiries</span>
+      <h3 class="text-3xl font-hangul-myeongjo font-bold text-earth-900 mb-4">희스테이와 함께하는 특별한 제주</h3>
+      <p class="text-earth-600 text-sm max-w-lg mx-auto mb-8">
+        일정 및 예약 가능 여부는 전화 또는 문자로 가장 빠르게 안내받으실 수 있습니다.
+      </p>
+
+      <div class="inline-flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+        <a href="tel:070-7954-1417" class="px-8 py-3.5 bg-forest-800 text-white rounded-full font-bold text-sm hover:bg-forest-900 shadow-md transition flex items-center gap-2">
+          <span>📞 전화 예약 문의 (070-7954-1417)</span>
+        </a>
+        <a href="sms:070-7954-1417" class="px-8 py-3.5 bg-terracotta text-white rounded-full font-bold text-sm hover:opacity-90 shadow-md transition flex items-center gap-2">
+          <span>💬 문자 메시지 문의</span>
+        </a>
+      </div>
+
+      <div class="p-6 bg-white rounded-2xl border border-earth-300 max-w-xl mx-auto text-xs text-earth-700 text-left space-y-1.5 shadow-sm">
+        <p><strong>주소:</strong> 제주특별자치도 서귀포시 성산읍 온평리</p>
+        <p><strong>대표자:</strong> 지희철 | <strong>사업자등록번호:</strong> 526-40-00959</p>
+        <p><strong>이메일:</strong> jejuheestay@gmail.com | <strong>도메인:</strong> jejuheestay.co.kr</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-forest-950 text-stone-400 py-10 px-6 text-xs text-center border-t border-forest-900">
+    <p class="font-editorial text-stone-200 text-lg tracking-widest mb-2">HEESTAY JEJU</p>
+    <p>© 2026 HEESTAY JEJU. All Rights Reserved. Designed for Jeju Heestay</p>
+  </footer>
+
+  <!-- 포토 팝업 모달 -->
+  <div id="photoModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full bg-forest-950 rounded-2xl overflow-hidden shadow-2xl">
+      <button onclick="closePhoto()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-black/70 hover:bg-black text-white rounded-full flex items-center justify-center transition">✕</button>
+      <img id="photoModalImg" src="" alt="확대 사진" class="w-full max-h-[80vh] object-contain">
+      <div class="p-4 text-white text-center">
+        <p id="photoModalTitle" class="text-sm font-medium font-hangul-myeongjo"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 층별 전환 탭
+    function switchFloor(floor) {
+      const c1 = document.getElementById('contentFloor1');
+      const c2 = document.getElementById('contentFloor2');
+      const b1 = document.getElementById('btnFloor1');
+      const b2 = document.getElementById('btnFloor2');
+
+      if (floor === 'floor1') {
+        c1.classList.remove('hidden');
+        c2.classList.add('hidden');
+        b1.className = "px-6 py-2.5 rounded-full font-medium text-sm bg-forest-800 text-white shadow transition";
+        b2.className = "px-6 py-2.5 rounded-full font-medium text-sm bg-earth-200 text-earth-800 hover:bg-earth-300 transition";
+      } else {
+        c2.classList.remove('hidden');
+        c1.classList.add('hidden');
+        b2.className = "px-6 py-2.5 rounded-full font-medium text-sm bg-forest-800 text-white shadow transition";
+        b1.className = "px-6 py-2.5 rounded-full font-medium text-sm bg-earth-200 text-earth-800 hover:bg-earth-300 transition";
+      }
+    }
+
+    // 사진 팝업
+    function openPhoto(src, title) {
+      document.getElementById('photoModalImg').src = src;
+      document.getElementById('photoModalTitle').innerText = title;
+      document.getElementById('photoModal').classList.remove('hidden');
+    }
+    function closePhoto() {
+      document.getElementById('photoModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
