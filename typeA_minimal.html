@@ -146,18 +146,18 @@
         HEESTAY <span class="text-[7.5px] sm:text-[9px] tracking-[0.25em] font-sans uppercase font-light text-stone-300 block -mt-1">Jeju Private Poolvilla</span>
       </a>
       
-      <!-- 데스크탑 네비게이션 (lg 이상) -->
-      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-7 text-xs tracking-widest text-white/90 drop-shadow">
-        <a href="#spaces" class="hover:text-amber-200 transition">공간 둘러보기</a>
-        <a href="#rate" class="hover:text-amber-200 transition">이용요금 & 예약</a>
-        <a href="#amenities" class="hover:text-amber-200 transition">풀옵션 구비시설</a>
-        <a href="#guide-fee" class="hover:text-amber-200 transition">이용안내 & 공과금</a>
-        <a href="#local-guide" class="hover:text-amber-200 transition">주변여행 & 위치</a>
+      <!-- 데스크탑 네비게이션 (1단어 초슬림화: 공간 Space, 가격 Price, 시설 Facilities, 안내 Guide, 위치 Location) -->
+      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs tracking-widest text-white/90 drop-shadow">
+        <a href="#spaces" class="hover:text-amber-200 transition">공간</a>
+        <a href="#rate" class="hover:text-amber-200 transition">가격</a>
+        <a href="#amenities" class="hover:text-amber-200 transition">시설</a>
+        <a href="#guide-fee" class="hover:text-amber-200 transition">안내</a>
+        <a href="#local-guide" class="hover:text-amber-200 transition">위치</a>
       </nav>
 
       <!-- 모바일 1줄 인라인 메뉴 + 🌐 콤팩트 다국어 스위처 -->
       <nav class="lg:hidden flex items-center space-x-1 sm:space-x-2 text-[11px] sm:text-[12px] text-stone-200 tracking-wider font-medium">
-        <a href="#rate" class="hover:text-amber-300 transition px-0.5 py-1">요금</a>
+        <a href="#rate" class="hover:text-amber-300 transition px-0.5 py-1">가격</a>
         <span class="text-stone-600 text-[9px]">·</span>
         <a href="#calendar" class="text-amber-300 font-semibold transition px-0.5 py-1">달력</a>
         <span class="text-stone-600 text-[9px]">·</span>
@@ -166,8 +166,8 @@
         <a href="#guide-fee" class="hover:text-amber-300 transition px-0.5 py-1">안내</a>
         <span class="text-stone-600 text-[9px]">|</span>
         
-        <!-- 모바일 콤팩트 지구본 언어 팝오버 버튼 -->
-        <div class="relative">
+        <!-- 모바일 콤팩트 지구본 언어 팝오버 버튼 (notranslate 고정) -->
+        <div class="relative notranslate">
           <button onclick="toggleMobileLangMenu(event)" class="flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-[10px] font-bold text-amber-300 transition">
             <span>🌐</span>
             <span id="currentMobileLangText">KR</span>
@@ -183,9 +183,9 @@
       </nav>
 
       <!-- 데스크탑 우측 영역: 다국어 스위처 + 카톡 문의 + 예약 버튼 (lg 이상) -->
-      <div class="hidden lg:flex items-center space-x-3">
-        <!-- 데스크탑 다국어 언어 스위처 -->
-        <div class="flex items-center gap-1 bg-stone-900/60 border border-white/15 rounded-full px-2.5 py-1 text-[11px] font-semibold text-stone-300">
+      <div class="hidden lg:flex items-center space-x-2.5">
+        <!-- 데스크탑 다국어 언어 스위처 (notranslate로 자동 번역 팽창 방지) -->
+        <div class="notranslate flex items-center gap-1 bg-stone-900/60 border border-white/15 rounded-full px-2.5 py-1 text-[11px] font-semibold text-stone-300">
           <button onclick="changeSiteLanguage('ko')" class="lang-btn lang-btn-ko px-1.5 py-0.5 rounded transition hover:text-amber-300 text-amber-300 font-bold">KR</button>
           <span class="text-stone-600 text-[9px]">·</span>
           <button onclick="changeSiteLanguage('en')" class="lang-btn lang-btn-en px-1.5 py-0.5 rounded transition hover:text-amber-300">EN</button>
@@ -195,23 +195,23 @@
           <button onclick="changeSiteLanguage('ja')" class="lang-btn lang-btn-ja px-1.5 py-0.5 rounded transition hover:text-amber-300">日本語</button>
         </div>
 
-        <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="text-xs px-3.5 py-1.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-full transition flex items-center gap-1.5 shadow-sm">
+        <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="text-xs px-3 py-1.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-full transition flex items-center gap-1 shadow-sm">
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-          <span>카톡 문의</span>
+          <span>카톡</span>
         </a>
         <a href="#calendar" class="text-xs px-3.5 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-full transition tracking-wider inline-flex font-medium shadow">
-          예약 가능일
+          달력
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section: 화면 전체(100vh) 풀스크린 비디오 배경 (유튜브 인트로 쇼츠 영상 연동) -->
+  <!-- Hero Section: 화면 전체(100vh) 풀스크린 비디오 배경 (신규 인트로 쇼츠 f09Xfn1fHm8 연동) -->
   <section class="relative h-screen min-h-[640px] w-full flex items-center justify-center overflow-hidden bg-stone-950">
     <!-- 화면 전체를 채우는 인트로 유튜브 쇼츠 영상 배경 (무음 자동재생 및 무한 루프, 잔상 없는 선명한 뷰) -->
     <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
       <iframe class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none w-[130vw] h-[230vw] min-h-[130vh] min-w-[75vh] max-w-none opacity-100"
-        src="https://www.youtube-nocookie.com/embed/JG92-0fSScQ?autoplay=1&mute=1&loop=1&playlist=JG92-0fSScQ&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1"
+        src="https://www.youtube-nocookie.com/embed/f09Xfn1fHm8?autoplay=1&mute=1&loop=1&playlist=f09Xfn1fHm8&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1"
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
       </iframe>
     </div>
@@ -1529,7 +1529,7 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <a id="tourYoutubeLink" href="https://youtube.com/shorts/I-4lKEGpQ2E" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1 text-[11px] text-stone-400 hover:text-amber-400 transition" title="유튜브에서 바로보기">
+        <a id="tourYoutubeLink" href="https://youtube.com/shorts/JG92-0fSScQ" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1 text-[11px] text-stone-400 hover:text-amber-400 transition" title="유튜브에서 바로보기">
           <span>YouTube에서 열기</span>
           <svg class="w-3 h-3 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
@@ -2544,7 +2544,7 @@
       modal.style.display = 'flex';
       modal.classList.remove('hidden');
       if (ytFrame) {
-        ytFrame.src = 'https://www.youtube-nocookie.com/embed/I-4lKEGpQ2E?autoplay=1&rel=0&playsinline=1';
+        ytFrame.src = 'https://www.youtube-nocookie.com/embed/JG92-0fSScQ?autoplay=1&rel=0&playsinline=1';
       }
     }
 

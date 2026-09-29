@@ -1,26 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <defs>
-    <linearGradient id="heestayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#292524" />
-      <stop offset="100%" stop-color="#1c1917" />
-    </linearGradient>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b" />
-      <stop offset="50%" stop-color="#d97706" />
-      <stop offset="100%" stop-color="#b45309" />
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 모던 럭셔리 다크 배경 (어두운 탭, 밝은 탭 모두에서 돋보이는 딥 차콜 & 둥근 모서리) -->
+  <rect width="64" height="64" rx="14" fill="#1C1917"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#FAF8F5" stroke-width="1.5" stroke-opacity="0.3"/>
+  
+  <!-- 선명한 화이트 세리프 영문 'H' (우아하고 뚜렷한 실루엣) -->
+  <text x="32" y="44" 
+        font-family="'Playfair Display', 'Cinzel', 'Georgia', serif" 
+        font-size="34" 
+        font-weight="700" 
+        fill="#FFFFFF" 
+        text-anchor="middle" 
+        letter-spacing="0">H</text>
 
-  <!-- 배경 둥근 사각형 (스톤 다크) -->
-  <rect width="64" height="64" rx="16" fill="url(#heestayGrad)" />
-  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#78716c" stroke-width="1" stroke-opacity="0.3" />
-
-  <!-- 제주 단독 풀빌라 박공 지붕 실루엣 (골드 앰버) -->
-  <path d="M14 30 L32 15 L50 30" fill="none" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
-
-  <!-- 제주 돌담 & 물결(수영장/자쿠지) 감성 라인 -->
-  <path d="M20 48 Q32 43 44 48" fill="none" stroke="#a8a29e" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
-
-  <!-- 'H' 모노그램 (HEESTAY) -->
-  <path d="M24 28 V43 M40 28 V43 M24 35.5 H40" fill="none" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- 한글 '희' (따뜻한 골드 앰버 톤 악센트 뱃지, H 중심에 감성적으로 융합) -->
+  <circle cx="45" cy="19" r="10" fill="#D97706"/>
+  <text x="45" y="23" 
+        font-family="'Pretendard', 'Noto Serif KR', sans-serif" 
+        font-size="11" 
+        font-weight="900" 
+        fill="#FFFFFF" 
+        text-anchor="middle">희</text>
 </svg>
