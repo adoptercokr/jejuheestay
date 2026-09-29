@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.jejuheestay.co.kr/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.jejuheestay.co.kr/img/외관1.jpg</image:loc>
+      <image:title>제주 감성 단독 풀빌라 희스테이 외관 전경</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.jejuheestay.co.kr/img/수영장1.jpg</image:loc>
+      <image:title>희스테이 야외 전용 풀장</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.jejuheestay.co.kr/img/자쿠지1.jpg</image:loc>
+      <image:title>희스테이 프라이빗 노천 온수 자쿠지</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.jejuheestay.co.kr/img/썬룸1.jpg</image:loc>
+      <image:title>희스테이 사계절 바베큐 썬룸</image:title>
+    </image:image>
+  </url>
+</urlset>
