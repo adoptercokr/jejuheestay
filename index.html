@@ -180,12 +180,12 @@
             </svg>
             <span id="currentMobileLangText">KR</span>
           </button>
-          <!-- 모바일 언어 드롭다운 (초미니멀) -->
-          <div id="mobileLangDropdown" class="hidden absolute right-0 top-full mt-1.5 bg-stone-900/95 border border-stone-700/80 rounded-xl shadow-2xl py-1 px-1 min-w-[76px] z-50 flex flex-col gap-0.5 backdrop-blur-md">
-            <button onclick="changeSiteLanguage('ko')" class="px-2 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-amber-300">KR</button>
-            <button onclick="changeSiteLanguage('en')" class="px-2 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">EN</button>
-            <button onclick="changeSiteLanguage('zh-CN')" class="px-2 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">중어</button>
-            <button onclick="changeSiteLanguage('ja')" class="px-2 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">일어</button>
+          <!-- 모바일 언어 드롭다운 (초미니멀 원어 표기) -->
+          <div id="mobileLangDropdown" class="hidden absolute right-0 top-full mt-1.5 bg-stone-900/95 border border-stone-700/80 rounded-xl shadow-2xl py-1 px-1 min-w-[82px] z-50 flex flex-col gap-0.5 backdrop-blur-md">
+            <button onclick="changeSiteLanguage('ko')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-amber-300">KR</button>
+            <button onclick="changeSiteLanguage('en')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">EN</button>
+            <button onclick="changeSiteLanguage('zh-CN')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">中文</button>
+            <button onclick="changeSiteLanguage('ja')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">日本語</button>
           </div>
         </div>
       </nav>
@@ -202,12 +202,12 @@
             <span id="currentDesktopLangText" class="font-bold text-amber-300">KR</span>
             <svg class="w-2.5 h-2.5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <!-- 데스크탑 언어 드롭다운 (초미니멀) -->
-          <div id="desktopLangDropdown" class="hidden absolute right-0 top-full mt-1.5 bg-stone-900/95 border border-stone-700/80 rounded-xl shadow-2xl py-1 px-1 min-w-[76px] z-50 flex flex-col gap-0.5 backdrop-blur-md">
+          <!-- 데스크탑 언어 드롭다운 (초미니멀 원어 표기) -->
+          <div id="desktopLangDropdown" class="hidden absolute right-0 top-full mt-1.5 bg-stone-900/95 border border-stone-700/80 rounded-xl shadow-2xl py-1 px-1 min-w-[82px] z-50 flex flex-col gap-0.5 backdrop-blur-md">
             <button onclick="changeSiteLanguage('ko')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-amber-300">KR</button>
             <button onclick="changeSiteLanguage('en')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">EN</button>
-            <button onclick="changeSiteLanguage('zh-CN')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">중어</button>
-            <button onclick="changeSiteLanguage('ja')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">일어</button>
+            <button onclick="changeSiteLanguage('zh-CN')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">中文</button>
+            <button onclick="changeSiteLanguage('ja')" class="px-2.5 py-1 text-center text-xs font-semibold hover:bg-stone-800 rounded-lg text-stone-200">日本語</button>
           </div>
         </div>
 
@@ -2737,8 +2737,8 @@
         return;
       }
 
-      // 모바일 및 PC 현재 언어 표시 초간단화 갱신 (KR, EN, 중어, 일어)
-      const langMap = { 'ko': 'KR', 'en': 'EN', 'zh-CN': '중어', 'ja': '일어' };
+      // 모바일 및 PC 현재 언어 표시 초간단화 갱신 (KR, EN, 中文, 日本語)
+      const langMap = { 'ko': 'KR', 'en': 'EN', 'zh-CN': '中文', 'ja': '日本語' };
       const selectedText = langMap[langCode] || 'KR';
       const curMobEl = document.getElementById('currentMobileLangText');
       const curDeskEl = document.getElementById('currentDesktopLangText');
@@ -2769,7 +2769,7 @@
           document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}`;
         } else if (targetLang && targetLang !== 'ko') {
-          const langMap = { 'ko': 'KR', 'en': 'EN', 'zh-CN': '중어', 'ja': '일어' };
+          const langMap = { 'ko': 'KR', 'en': 'EN', 'zh-CN': '中文', 'ja': '日本語' };
           const curText = langMap[targetLang] || 'KR';
           const curMobEl = document.getElementById('currentMobileLangText');
           const curDeskEl = document.getElementById('currentDesktopLangText');
