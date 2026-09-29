@@ -131,40 +131,49 @@
 <body class="selection:bg-stone-300 selection:text-stone-900">
 
   <!-- Header -->
-  <header class="fixed top-0 w-full z-40 transition-all duration-300 py-3 sm:py-4 px-4 sm:px-6 md:px-12 flex justify-between items-center bg-black/40 backdrop-blur-md border-b border-white/10" id="mainHeader">
-    <a href="#" class="text-base sm:text-lg md:text-2xl font-serif tracking-[0.2em] text-white drop-shadow-md flex flex-col">
-      <span class="font-normal tracking-[0.22em]">JEJU HEESTAY</span>
-      <span class="text-[9px] sm:text-[10px] tracking-[0.25em] font-sans font-medium text-amber-300 -mt-0.5">제주 희스테이 단독 풀빌라</span>
-    </a>
-    
-    <nav class="hidden lg:flex items-center space-x-7 text-xs tracking-widest text-white/90 drop-shadow">
-      <a href="#spaces" class="hover:text-amber-200 transition">공간 둘러보기</a>
-      <a href="#rate" class="hover:text-amber-200 transition">이용요금 & 예약</a>
-      <a href="#amenities" class="hover:text-amber-200 transition">풀옵션 구비시설</a>
-      <a href="#guide-fee" class="hover:text-amber-200 transition">이용안내 & 공과금</a>
-      <a href="#local-guide" class="hover:text-amber-200 transition">주변여행 & 위치</a>
-    </nav>
+  <header class="fixed top-0 w-full z-40 transition-all duration-300 py-3 px-4 sm:px-6 md:px-12 bg-black/50 backdrop-blur-md border-b border-white/10" id="mainHeader">
+    <div class="flex justify-between items-center w-full">
+      <!-- 오리지널 세리프 럭셔리 로고 복원 -->
+      <a href="#" class="text-xl md:text-2xl font-serif tracking-[0.25em] text-white drop-shadow-md">
+        HEESTAY <span class="text-[9px] tracking-[0.25em] font-sans uppercase font-light text-stone-200 block -mt-1">Jeju Private Poolvilla</span>
+      </a>
+      
+      <!-- 데스크탑 네비게이션 (lg 이상) -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs tracking-widest text-white/90 drop-shadow">
+        <a href="#spaces" class="hover:text-amber-200 transition">공간 둘러보기</a>
+        <a href="#rate" class="hover:text-amber-200 transition">이용요금 & 예약</a>
+        <a href="#amenities" class="hover:text-amber-200 transition">풀옵션 구비시설</a>
+        <a href="#guide-fee" class="hover:text-amber-200 transition">이용안내 & 공과금</a>
+        <a href="#local-guide" class="hover:text-amber-200 transition">주변여행 & 위치</a>
+      </nav>
 
-    <div class="flex items-center space-x-2">
-      <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="text-xs px-3 sm:px-3.5 py-1.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-full transition flex items-center gap-1.5 shadow-sm">
-        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-        <span>카톡 문의</span>
-      </a>
-      <a href="#calendar" class="text-xs px-3.5 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-full transition tracking-wider hidden sm:inline-flex font-medium shadow">
-        예약 가능일
-      </a>
+      <!-- 우측 버튼 -->
+      <div class="flex items-center space-x-2">
+        <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="text-xs px-3 sm:px-3.5 py-1.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-full transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+          <span>카톡 문의</span>
+        </a>
+        <a href="#calendar" class="text-xs px-3.5 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-full transition tracking-wider hidden sm:inline-flex font-medium shadow">
+          예약 가능일
+        </a>
+      </div>
     </div>
-  </header>
 
-  <!-- 모바일 전용 상단 콤팩트 가로 탭 메뉴바 (대괄호 없는 세련된 모던 탭) -->
-  <nav class="fixed top-[52px] sm:top-[60px] left-0 right-0 z-30 lg:hidden px-3 py-1.5 bg-stone-900/90 backdrop-blur-md border-b border-stone-800 flex items-center gap-1.5 overflow-x-auto scrollbar-none text-[11px]">
-    <a href="#spaces" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">공간 둘러보기</a>
-    <a href="#rate" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">이용요금</a>
-    <a href="#calendar" class="px-3 py-1 rounded-full bg-amber-600/90 text-white font-medium whitespace-nowrap transition shadow-sm">예약 달력</a>
-    <a href="#amenities" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">구비시설</a>
-    <a href="#guide-fee" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">이용안내</a>
-    <a href="#local-guide" class="px-3 py-1 rounded-full bg-white/10 text-stone-200 hover:text-white hover:bg-white/20 whitespace-nowrap transition">오시는 길</a>
-  </nav>
+    <!-- 모바일 최상단 인라인 미니 메뉴 (헤더 내부에 일체형으로 쏙 들어간 단정하고 럭셔리한 탭) -->
+    <nav class="lg:hidden mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-stone-300 tracking-wider">
+      <a href="#spaces" class="hover:text-amber-300 transition px-1 py-0.5">공간둘러보기</a>
+      <span class="text-stone-600 text-[9px]">·</span>
+      <a href="#rate" class="hover:text-amber-300 transition px-1 py-0.5">이용요금</a>
+      <span class="text-stone-600 text-[9px]">·</span>
+      <a href="#calendar" class="text-amber-300 font-semibold transition px-1 py-0.5">예약달력</a>
+      <span class="text-stone-600 text-[9px]">·</span>
+      <a href="#amenities" class="hover:text-amber-300 transition px-1 py-0.5">구비시설</a>
+      <span class="text-stone-600 text-[9px]">·</span>
+      <a href="#guide-fee" class="hover:text-amber-300 transition px-1 py-0.5">이용안내</a>
+      <span class="text-stone-600 text-[9px]">·</span>
+      <a href="#local-guide" class="hover:text-amber-300 transition px-1 py-0.5">위치</a>
+    </nav>
+  </header>
 
   <!-- Hero Section: 화면 전체(100vh) 풀스크린 비디오 배경 (유튜브 인트로 쇼츠 영상 연동) -->
   <section class="relative h-screen min-h-[640px] w-full flex items-center justify-center overflow-hidden bg-stone-950">
