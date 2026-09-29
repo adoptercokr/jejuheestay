@@ -210,8 +210,8 @@
     </div>
   </header>
 
-  <!-- 모바일 전용: 헤더 아래 우측으로 여유 있게 내린 선명한 반투명 다국어 버튼 -->
-  <div class="fixed top-14 right-3 z-30 lg:hidden notranslate">
+  <!-- 모바일 전용: 첫 화면(Hero) 상단 우측 위치 고정 다국어 버튼 (스크롤 시 자연스럽게 위로 올라감) -->
+  <div class="absolute top-14 right-3 z-30 lg:hidden notranslate">
     <button onclick="toggleMobileLangMenu(event)" class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900/85 hover:bg-stone-800 backdrop-blur-md border border-amber-400/40 text-[11px] font-bold text-amber-300 transition shadow-lg">
       <svg class="w-3 h-3 stroke-current text-amber-300" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
         <circle cx="12" cy="12" r="10"></circle>
@@ -1778,15 +1778,15 @@
     let selectedCheckin = null;
     let selectedCheckout = null;
 
-    // 헤더 스크롤 효과
+    // 헤더 스크롤 배경 블러 및 섀도우 효과 (초슬림 패딩 py-1.5는 스크롤 시에도 변형 없이 100% 영구 유지)
     window.addEventListener('scroll', () => {
       const header = document.getElementById('mainHeader');
-      if (window.scrollY > 80) {
-        header.classList.add('bg-stone-900/90', 'backdrop-blur-md', 'shadow-md', 'py-3');
-        header.classList.remove('py-5');
+      if (window.scrollY > 40) {
+        header.classList.add('bg-black/90', 'shadow-md');
+        header.classList.remove('bg-black/60');
       } else {
-        header.classList.remove('bg-stone-900/90', 'backdrop-blur-md', 'shadow-md', 'py-3');
-        header.classList.add('py-5');
+        header.classList.remove('bg-black/90', 'shadow-md');
+        header.classList.add('bg-black/60');
       }
     });
 
