@@ -106,11 +106,15 @@
         성산 온평리 130평 대지 위 40평 단독주택에서 마주하는 온전한 쉼
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-3.5 justify-center items-center">
-        <a href="#spaces" class="px-7 py-3 text-xs tracking-widest uppercase border border-white/70 hover:bg-white hover:text-stone-900 transition-all duration-300 rounded-full backdrop-blur-sm">
-          공간 둘러보기
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <button onclick="openVideoTourModal()" class="px-6 py-3 text-xs tracking-widest uppercase bg-amber-700/90 hover:bg-amber-600 text-white font-semibold transition-all duration-300 rounded-full shadow-lg flex items-center gap-2 backdrop-blur-sm">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>공간 전체 영상 보기</span>
+        </button>
+        <a href="#spaces" class="px-6 py-3 text-xs tracking-widest uppercase border border-white/70 hover:bg-white hover:text-stone-900 transition-all duration-300 rounded-full backdrop-blur-sm">
+          공간 사진 둘러보기
         </a>
-        <a href="#calendar" class="px-7 py-3 text-xs tracking-widest uppercase bg-brand-accent/90 hover:bg-brand-accent text-white transition-all duration-300 rounded-full shadow-lg">
+        <a href="#calendar" class="px-6 py-3 text-xs tracking-widest uppercase bg-brand-accent/90 hover:bg-brand-accent text-white transition-all duration-300 rounded-full shadow-lg">
           예약 가능일 & 견적 확인
         </a>
       </div>
@@ -235,8 +239,12 @@
           <h2 class="text-2xl md:text-3xl font-krSerif text-brand-dark">희스테이 공간 둘러보기</h2>
           <p class="text-xs text-stone-500 mt-1">130평 대지 위 40평 2층 단독주택 (기본 4인 / 최대 9인, 침실 3개 · 화장실 2개)</p>
         </div>
-        <div class="flex items-center gap-3">
-          <button onclick="openAllPhotosModal('all')" class="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-full text-xs font-semibold tracking-wider transition shadow-md flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button onclick="openVideoTourModal()" class="px-4 py-2.5 bg-amber-700 hover:bg-amber-600 text-white rounded-full text-xs font-bold tracking-wider transition shadow-md flex items-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span>공간 전체 영상 둘러보기</span>
+          </button>
+          <button onclick="openAllPhotosModal('all')" class="px-4 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-full text-xs font-semibold tracking-wider transition shadow-md flex items-center gap-2">
             <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             <span>사진 전체보기 (34장)</span>
           </button>
@@ -1333,6 +1341,39 @@
         </button>
       </div>
     </div>
+  <!-- 공간 전체 영상 둘러보기 모달 (유튜브 스트리밍 & 로컬 영상 하이브리드 지원) -->
+  <div id="videoTourModal" class="fixed inset-0 bg-black/95 z-[85] hidden flex flex-col justify-between p-3 sm:p-6 backdrop-blur-md select-none">
+    <!-- 모달 상단 바 -->
+    <div class="max-w-5xl w-full mx-auto flex items-center justify-between text-white pb-3 flex-shrink-0 border-b border-stone-800">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+        <h4 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+          <span>🎬 희스테이 공간 전체 둘러보기 영상 (Full Tour)</span>
+        </h4>
+      </div>
+      <button onclick="closeVideoTourModal()" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-stone-700 flex items-center justify-center text-stone-300 hover:text-white transition text-lg" title="닫기 (ESC)">✕</button>
+    </div>
+
+    <!-- 중앙 비디오 플레이어 영역 (16:9 반응형 극장 모드) -->
+    <div class="flex-1 flex items-center justify-center my-3 min-h-0">
+      <div class="max-w-4xl w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-stone-800 relative flex items-center justify-center">
+        <!-- 유튜브 플레이어 프레임 -->
+        <iframe id="tourYoutubeFrame" class="w-full h-full hidden" src="" title="희스테이 전체 둘러보기 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+        <!-- 로컬 비디오 플레이어 -->
+        <video id="tourLocalPlayer" controls playsinline class="w-full h-full object-contain">
+          <source src="./jejuheesatay-movie.mp4" type="video/mp4">
+          브라우저가 비디오 재생을 지원하지 않습니다.
+        </video>
+      </div>
+    </div>
+
+    <!-- 모달 하단 안내 바 -->
+    <div class="max-w-4xl w-full mx-auto flex-shrink-0 text-center pb-2">
+      <p class="text-xs text-stone-400">
+        130평 대지와 2층 단독 풀빌라의 모든 공간을 영상으로 생생하게 감상해 보세요.
+      </p>
+    </div>
   </div>
 
   <!-- 사진 전체보기 모달 (34장 카테고리 갤러리) -->
@@ -2213,16 +2254,61 @@
       document.getElementById('photoModal').classList.add('hidden');
     }
 
+    // 유튜브 영상 ID (유튜브에 업로드 후 해당 영상 ID를 여기에 넣으면 고화질 스트리밍 자동 재생)
+    // 예: 'abc123xyz' (빈칸 ''일 때는 로컬 jejuheesatay-movie.mp4 재생)
+    let HEESTAY_YOUTUBE_ID = '';
+
+    // 공간 전체 영상 모달 열기
+    function openVideoTourModal() {
+      const modal = document.getElementById('videoTourModal');
+      const ytFrame = document.getElementById('tourYoutubeFrame');
+      const localPlayer = document.getElementById('tourLocalPlayer');
+
+      modal.classList.remove('hidden');
+
+      if (HEESTAY_YOUTUBE_ID && HEESTAY_YOUTUBE_ID.trim() !== '') {
+        localPlayer.pause();
+        localPlayer.classList.add('hidden');
+        ytFrame.classList.remove('hidden');
+        ytFrame.src = `https://www.youtube.com/embed/${HEESTAY_YOUTUBE_ID}?autoplay=1&rel=0`;
+      } else {
+        ytFrame.src = '';
+        ytFrame.classList.add('hidden');
+        localPlayer.classList.remove('hidden');
+        localPlayer.currentTime = 0;
+        localPlayer.play().catch(() => {});
+      }
+    }
+
+    // 공간 전체 영상 모달 닫기
+    function closeVideoTourModal() {
+      const modal = document.getElementById('videoTourModal');
+      const ytFrame = document.getElementById('tourYoutubeFrame');
+      const localPlayer = document.getElementById('tourLocalPlayer');
+
+      modal.classList.add('hidden');
+      localPlayer.pause();
+      ytFrame.src = '';
+    }
+
     // 키보드 방향키 및 ESC 단축키 지원
     window.addEventListener('keydown', (e) => {
-      const modal = document.getElementById('photoModal');
-      if (modal && !modal.classList.contains('hidden')) {
+      const photoModal = document.getElementById('photoModal');
+      const videoModal = document.getElementById('videoTourModal');
+
+      if (photoModal && !photoModal.classList.contains('hidden')) {
         if (e.key === 'ArrowLeft') {
           prevPhoto();
         } else if (e.key === 'ArrowRight') {
           nextPhoto();
         } else if (e.key === 'Escape') {
           closePhotoModal();
+        }
+      }
+
+      if (videoModal && !videoModal.classList.contains('hidden')) {
+        if (e.key === 'Escape') {
+          closeVideoTourModal();
         }
       }
     });
