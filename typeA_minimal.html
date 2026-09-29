@@ -126,20 +126,28 @@
     .cal-day.range-start { border-top-right-radius: 0; border-bottom-right-radius: 0; }
     .cal-day.range-end { border-top-left-radius: 0; border-bottom-left-radius: 0; }
     .cal-day.past { color: #D1D5DB; cursor: not-allowed; }
+
+    /* 구글 번역 기본 프레임/툴팁 완벽 숨김 */
+    .goog-te-banner-frame.skiptranslate { display: none !important; }
+    body { top: 0px !important; }
+    .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+    .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+    #goog-gt-tt { display: none !important; }
+    .skiptranslate:not(.lang-btn) { display: none !important; }
   </style>
 </head>
 <body class="selection:bg-stone-300 selection:text-stone-900">
 
-  <!-- Header: 슬림 1줄형 디자인 (모바일: 로고 + 4대 핵심 메뉴 / 데스크탑: 풀 네비게이션 + 버튼) -->
-  <header class="fixed top-0 w-full z-40 transition-all duration-300 py-2.5 sm:py-3 px-4 sm:px-6 md:px-12 bg-black/60 backdrop-blur-md border-b border-white/10" id="mainHeader">
+  <!-- Header: 슬림 1줄형 디자인 (모바일: 로고 + 4대 핵심 메뉴 + 다국어 / 데스크탑: 풀 네비게이션 + 다국어 + 버튼) -->
+  <header class="fixed top-0 w-full z-40 transition-all duration-300 py-2.5 sm:py-3 px-3 sm:px-6 md:px-12 bg-black/60 backdrop-blur-md border-b border-white/10" id="mainHeader">
     <div class="flex justify-between items-center w-full">
       <!-- 오리지널 세리프 럭셔리 로고 -->
-      <a href="#" class="text-lg sm:text-xl md:text-2xl font-serif tracking-[0.22em] sm:tracking-[0.25em] text-white drop-shadow-md shrink-0">
-        HEESTAY <span class="text-[8px] sm:text-[9px] tracking-[0.25em] font-sans uppercase font-light text-stone-300 block -mt-1">Jeju Private Poolvilla</span>
+      <a href="#" class="text-base sm:text-xl md:text-2xl font-serif tracking-[0.2em] sm:tracking-[0.25em] text-white drop-shadow-md shrink-0">
+        HEESTAY <span class="text-[7.5px] sm:text-[9px] tracking-[0.25em] font-sans uppercase font-light text-stone-300 block -mt-1">Jeju Private Poolvilla</span>
       </a>
       
       <!-- 데스크탑 네비게이션 (lg 이상) -->
-      <nav class="hidden lg:flex items-center space-x-7 text-xs tracking-widest text-white/90 drop-shadow">
+      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-7 text-xs tracking-widest text-white/90 drop-shadow">
         <a href="#spaces" class="hover:text-amber-200 transition">공간 둘러보기</a>
         <a href="#rate" class="hover:text-amber-200 transition">이용요금 & 예약</a>
         <a href="#amenities" class="hover:text-amber-200 transition">풀옵션 구비시설</a>
@@ -147,19 +155,46 @@
         <a href="#local-guide" class="hover:text-amber-200 transition">주변여행 & 위치</a>
       </nav>
 
-      <!-- 모바일 1줄 인라인 메뉴 (하단에 카톡문의가 있으므로 상단은 요금, 달력, 시설, 안내 4대 핵심 메뉴로 슬림하게 압축) -->
-      <nav class="lg:hidden flex items-center space-x-1.5 sm:space-x-2.5 text-[12px] sm:text-[13px] text-stone-200 tracking-wider font-medium">
-        <a href="#rate" class="hover:text-amber-300 transition px-1 py-1">요금</a>
-        <span class="text-stone-500 text-[10px]">·</span>
-        <a href="#calendar" class="text-amber-300 font-semibold transition px-1 py-1">달력</a>
-        <span class="text-stone-500 text-[10px]">·</span>
-        <a href="#amenities" class="hover:text-amber-300 transition px-1 py-1">시설</a>
-        <span class="text-stone-500 text-[10px]">·</span>
-        <a href="#guide-fee" class="hover:text-amber-300 transition px-1 py-1">안내</a>
+      <!-- 모바일 1줄 인라인 메뉴 + 🌐 콤팩트 다국어 스위처 -->
+      <nav class="lg:hidden flex items-center space-x-1 sm:space-x-2 text-[11px] sm:text-[12px] text-stone-200 tracking-wider font-medium">
+        <a href="#rate" class="hover:text-amber-300 transition px-0.5 py-1">요금</a>
+        <span class="text-stone-600 text-[9px]">·</span>
+        <a href="#calendar" class="text-amber-300 font-semibold transition px-0.5 py-1">달력</a>
+        <span class="text-stone-600 text-[9px]">·</span>
+        <a href="#amenities" class="hover:text-amber-300 transition px-0.5 py-1">시설</a>
+        <span class="text-stone-600 text-[9px]">·</span>
+        <a href="#guide-fee" class="hover:text-amber-300 transition px-0.5 py-1">안내</a>
+        <span class="text-stone-600 text-[9px]">|</span>
+        
+        <!-- 모바일 콤팩트 지구본 언어 팝오버 버튼 -->
+        <div class="relative">
+          <button onclick="toggleMobileLangMenu(event)" class="flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-[10px] font-bold text-amber-300 transition">
+            <span>🌐</span>
+            <span id="currentMobileLangText">KR</span>
+          </button>
+          <!-- 모바일 언어 드롭다운 팝오버 -->
+          <div id="mobileLangDropdown" class="hidden absolute right-0 top-full mt-2 bg-stone-900/95 border border-stone-700 rounded-2xl shadow-2xl py-1 px-1 min-w-[105px] z-50 flex flex-col gap-0.5 backdrop-blur-md">
+            <button onclick="changeSiteLanguage('ko')" class="px-2.5 py-1.5 text-left text-xs font-semibold hover:bg-stone-800 rounded-xl text-amber-300">🇰🇷 한국어</button>
+            <button onclick="changeSiteLanguage('en')" class="px-2.5 py-1.5 text-left text-xs font-semibold hover:bg-stone-800 rounded-xl text-stone-200">🇺🇸 English</button>
+            <button onclick="changeSiteLanguage('zh-CN')" class="px-2.5 py-1.5 text-left text-xs font-semibold hover:bg-stone-800 rounded-xl text-stone-200">🇨🇳 中文</button>
+            <button onclick="changeSiteLanguage('ja')" class="px-2.5 py-1.5 text-left text-xs font-semibold hover:bg-stone-800 rounded-xl text-stone-200">🇯🇵 日本語</button>
+          </div>
+        </div>
       </nav>
 
-      <!-- 데스크탑 우측 버튼 (lg 이상) -->
-      <div class="hidden lg:flex items-center space-x-2">
+      <!-- 데스크탑 우측 영역: 다국어 스위처 + 카톡 문의 + 예약 버튼 (lg 이상) -->
+      <div class="hidden lg:flex items-center space-x-3">
+        <!-- 데스크탑 다국어 언어 스위처 -->
+        <div class="flex items-center gap-1 bg-stone-900/60 border border-white/15 rounded-full px-2.5 py-1 text-[11px] font-semibold text-stone-300">
+          <button onclick="changeSiteLanguage('ko')" class="lang-btn lang-btn-ko px-1.5 py-0.5 rounded transition hover:text-amber-300 text-amber-300 font-bold">KR</button>
+          <span class="text-stone-600 text-[9px]">·</span>
+          <button onclick="changeSiteLanguage('en')" class="lang-btn lang-btn-en px-1.5 py-0.5 rounded transition hover:text-amber-300">EN</button>
+          <span class="text-stone-600 text-[9px]">·</span>
+          <button onclick="changeSiteLanguage('zh-CN')" class="lang-btn lang-btn-zh-CN px-1.5 py-0.5 rounded transition hover:text-amber-300">中文</button>
+          <span class="text-stone-600 text-[9px]">·</span>
+          <button onclick="changeSiteLanguage('ja')" class="lang-btn lang-btn-ja px-1.5 py-0.5 rounded transition hover:text-amber-300">日本語</button>
+        </div>
+
         <a href="http://pf.kakao.com/_RmxfxgG/chat" target="_blank" class="text-xs px-3.5 py-1.5 bg-[#FEE500] hover:bg-[#FADA0A] text-stone-900 font-semibold rounded-full transition flex items-center gap-1.5 shadow-sm">
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.82 1.83 5.3 4.62 6.72-.2.72-.73 2.62-.84 3.03-.13.51.19.5.4.34.28-.21 3.24-2.2 4.54-3.08.42.06.85.09 1.28.09 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
           <span>카톡 문의</span>
@@ -1056,15 +1091,15 @@
         </p>
       </div>
 
-      <!-- 주변 맛집 BEST 7 -->
+      <!-- 주변 맛집 BEST 8 (제주성심당 추가로 4열 대칭 완성) -->
       <div class="mb-14">
         <div class="flex items-center gap-2 mb-6">
           <span class="w-2.5 h-2.5 rounded-full bg-stone-800"></span>
-          <h3 class="text-lg font-bold text-brand-dark">호스트 추천 주변 맛집 BEST 7</h3>
+          <h3 class="text-lg font-bold text-brand-dark">호스트 추천 주변 맛집 BEST 8</h3>
           <span class="text-xs text-stone-400">온평리 및 성산 일대</span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           
           <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
             <div>
@@ -1132,7 +1167,7 @@
             </div>
           </div>
 
-          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between sm:col-span-2 lg:col-span-2 xl:col-span-2">
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
             <div>
               <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Fresh Seafood</span>
               <h4 class="text-sm font-bold text-brand-dark mt-1">온평바다한그릇 성산본점</h4>
@@ -1140,6 +1175,18 @@
             </div>
             <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
               차량 약 3분 · 온평 포구 해안길
+            </div>
+          </div>
+
+          <!-- 8. 제주성심당 추가 -->
+          <div class="p-5 rounded-2xl bg-brand-bg border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-brand-accent tracking-wider uppercase">Bakery & Dessert</span>
+              <h4 class="text-sm font-bold text-brand-dark mt-1">제주성심당</h4>
+              <p class="text-xs text-stone-500 mt-1 leading-relaxed">성산 일대의 소문난 베이커리 명소, 갓 구운 신선한 빵과 시그니처 디저트</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-brand-border/60 text-[11px] text-stone-400">
+              차량 약 8분 · 성산 일대 위치
             </div>
           </div>
 
@@ -2565,9 +2612,71 @@
       }, { passive: true });
     }
 
+    // ==========================================
+    // 🌐 다국어 지원 (Google Translate 연동)
+    // ==========================================
+    function toggleMobileLangMenu(e) {
+      if (e) e.stopPropagation();
+      const drop = document.getElementById('mobileLangDropdown');
+      if (drop) drop.classList.toggle('hidden');
+    }
+
+    document.addEventListener('click', () => {
+      const drop = document.getElementById('mobileLangDropdown');
+      if (drop && !drop.classList.contains('hidden')) {
+        drop.classList.add('hidden');
+      }
+    });
+
+    function changeSiteLanguage(langCode) {
+      const drop = document.getElementById('mobileLangDropdown');
+      if (drop) drop.classList.add('hidden');
+
+      // 모바일 현재 언어 표시 갱신
+      const langMap = { 'ko': 'KR', 'en': 'EN', 'zh-CN': '中', 'ja': '日' };
+      const curTextEl = document.getElementById('currentMobileLangText');
+      if (curTextEl) curTextEl.innerText = langMap[langCode] || 'KR';
+
+      // 데스크탑 버튼 하이라이트 갱신
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('text-amber-300', 'font-bold');
+        btn.classList.add('text-stone-300');
+      });
+      const activeBtn = document.querySelector(`.lang-btn-${langCode.replace('-', '\\-')}`);
+      if (activeBtn) {
+        activeBtn.classList.add('text-amber-300', 'font-bold');
+        activeBtn.classList.remove('text-stone-300');
+      }
+
+      // 구글 번역 실행
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      } else {
+        // 쿠키 설정 및 새로고침
+        document.cookie = `googtrans=/ko/${langCode}; path=/;`;
+        document.cookie = `googtrans=/ko/${langCode}; path=/; domain=${window.location.hostname}`;
+        location.reload();
+      }
+    }
+
     // 초기 실행
     renderCalendar();
     fetchBookingsFromCloud(); // 클라우드 실시간 예약 데이터 자동 동기화
   </script>
+
+  <!-- Google Translate Hidden Element & Loader -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ko',
+        includedLanguages: 'ko,en,zh-CN,ja',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
