@@ -1772,8 +1772,9 @@
     let holidays = JSON.parse(localStorage.getItem('HEESTAY_HOLIDAYS')) || Object.assign({}, HOLIDAYS_PRESETS);
 
     let isAdminMode = false;
-    let currentYear = 2026;
-    let currentMonth = 9; // 10월
+    const initialCalendarDate = new Date();
+    let currentYear = initialCalendarDate.getFullYear();
+    let currentMonth = initialCalendarDate.getMonth();
     let selectedCheckin = null;
     let selectedCheckout = null;
 
