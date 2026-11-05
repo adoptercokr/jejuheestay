@@ -273,26 +273,58 @@
     </div>
   </section>
 
-  <!-- Hero Pool Photo Section: 인트로 영상 바로 아래 동일한 풀스크린(100vh) 대형 수영장 대표사진 -->
-  <section class="relative h-screen min-h-[640px] w-full overflow-hidden bg-stone-950">
-    <img src="./img/수영장1.jpg" alt="제주 희스테이 야외 프라이빗 수영장" class="w-full h-full object-cover">
-  </section>
+  <!-- Hero Pool Slider Section: 대형 수영장 사진 3장 좌우 롤링 슬라이더 + 반투명 네비게이션 + 혜택 오버레이 -->
+  <section id="zero-benefits" class="relative h-screen min-h-[640px] w-full overflow-hidden bg-stone-950 select-none">
+    <!-- 좌우 슬라이드 컨테이너 -->
+    <div id="poolSliderTrack" class="flex h-full w-full transition-transform duration-700 ease-out">
+      <div class="w-full h-full flex-shrink-0 relative">
+        <img src="./img/수영장1.jpg" alt="제주 희스테이 야외 프라이빗 수영장" class="w-full h-full object-cover">
+      </div>
+      <div class="w-full h-full flex-shrink-0 relative">
+        <img src="./img/수영장2.jpg" alt="야외 수영장 전경" class="w-full h-full object-cover">
+      </div>
+      <div class="w-full h-full flex-shrink-0 relative">
+        <img src="./img/수영장3.jpg" alt="제주 돌담과 온수 수영장" class="w-full h-full object-cover">
+      </div>
+    </div>
 
-  <!-- Section 1: 3대 혜택 & 투명한 공과금 실비 안내 (군더더기 없는 미니멀 요약) -->
-  <section id="zero-benefits" class="py-10 sm:py-14 px-5 sm:px-6 md:px-12 max-w-5xl mx-auto">
-    <div class="bg-brand-sand rounded-2xl p-6 sm:p-8 border border-brand-border flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 shadow-sm">
-      <div class="text-center md:text-left flex-1">
-        <span translate="no" class="notranslate text-xs uppercase tracking-[0.25em] text-brand-accent font-bold block mb-1.5">Special Value</span>
-        <h2 class="text-xl sm:text-2xl font-krSerif text-brand-dark font-bold">야외 수영장 · 노천 자쿠지 · 바베큐 추가비용 없음</h2>
-        <p class="text-xs sm:text-sm text-stone-600 mt-2 leading-relaxed">
-          수영장 온수비, 노천 자쿠지 이용료, 바베큐 그릴 대여비가 모두 <strong>0원(무료)</strong>입니다.
+    <!-- 은은한 다크 비네팅 오버레이 (사진 깊이감 및 텍스트 선명도) -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/45 pointer-events-none"></div>
+
+    <!-- 중앙 텍스트 오버레이 (야외 수영장, 자쿠지, 바베큐 추가비용 없음) -->
+    <div class="absolute inset-0 flex items-center justify-center p-6 text-center text-white pointer-events-none z-10">
+      <div class="max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-xs text-amber-300 font-medium mb-4 drop-shadow">
+          <span>Special Value</span>
+          <span class="w-1 h-1 rounded-full bg-amber-400"></span>
+          <span>시설 추가비 0원</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl md:text-5xl font-krSerif font-bold text-white tracking-wide leading-tight mb-4 drop-shadow-lg">
+          야외 수영장 · 노천 자쿠지 · 바베큐<br>
+          <span class="text-amber-200">추가 비용 없음</span>
+        </h2>
+        <p class="text-xs sm:text-base text-stone-200 font-light leading-relaxed mb-4 max-w-xl mx-auto drop-shadow">
+          수영장 온수비, 노천 스파 자쿠지 이용료, 바베큐 그릴 대여비가 모두 <strong>0원(무료)</strong>입니다.
         </p>
+        <div class="inline-block px-4 py-2 rounded-xl bg-black/50 backdrop-blur-md border border-white/15 text-[11px] sm:text-xs text-stone-300 drop-shadow">
+          💧 <strong>공과금 실비:</strong> 수도·가스·전기는 마진 없이 실제 계량기 검침분만 정산됩니다.
+        </div>
       </div>
-      <div class="flex-shrink-0 bg-white px-5 py-3.5 rounded-xl border border-brand-border text-center md:text-right shadow-sm w-full md:w-auto">
-        <span class="text-[11px] text-brand-accent font-bold block mb-0.5">정직하고 투명한 정산</span>
-        <span class="text-xs sm:text-sm font-bold text-stone-900 block">공과금 실비 정산</span>
-        <span class="text-[11px] text-stone-500 block mt-0.5">수도·가스·전기 실제 계량기 검침분만 정산</span>
-      </div>
+    </div>
+
+    <!-- 좌우 반투명 화살표 네비게이션 버튼 -->
+    <button onclick="prevPoolSlide()" aria-label="이전 수영장 사진" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/30 hover:bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition hover:scale-105 shadow-xl z-20 cursor-pointer">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button onclick="nextPoolSlide()" aria-label="다음 수영장 사진" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/30 hover:bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition hover:scale-105 shadow-xl z-20 cursor-pointer">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- 하단 슬라이드 인디케이터 (3 dots) -->
+    <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20">
+      <button onclick="goToPoolSlide(0)" id="poolDot_0" class="h-2.5 rounded-full bg-white transition-all duration-300 w-8 shadow"></button>
+      <button onclick="goToPoolSlide(1)" id="poolDot_1" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300"></button>
+      <button onclick="goToPoolSlide(2)" id="poolDot_2" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300"></button>
     </div>
   </section>
 
@@ -2084,6 +2116,61 @@
     let currentFilteredPhotos = [...ALL_PHOTOS];
     let currentMainPhotoIndex = 0;
 
+
+    // ==========================================
+    // 수영장 대표사진 3장 좌우 롤링 슬라이더 스크립트
+    // ==========================================
+    let currentPoolSlide = 0;
+    const totalPoolSlides = 3;
+    let poolSlideTimer = null;
+
+    function updatePoolSlideUI() {
+      const track = document.getElementById('poolSliderTrack');
+      if (track) {
+        track.style.transform = `translateX(-${currentPoolSlide * 100}%)`;
+      }
+      for (let i = 0; i < totalPoolSlides; i++) {
+        const dot = document.getElementById(`poolDot_${i}`);
+        if (dot) {
+          if (i === currentPoolSlide) {
+            dot.className = 'h-2.5 rounded-full bg-white transition-all duration-300 w-8 shadow';
+          } else {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300';
+          }
+        }
+      }
+    }
+
+    function nextPoolSlide() {
+      currentPoolSlide = (currentPoolSlide + 1) % totalPoolSlides;
+      updatePoolSlideUI();
+      resetPoolSlideTimer();
+    }
+
+    function prevPoolSlide() {
+      currentPoolSlide = (currentPoolSlide - 1 + totalPoolSlides) % totalPoolSlides;
+      updatePoolSlideUI();
+      resetPoolSlideTimer();
+    }
+
+    function goToPoolSlide(index) {
+      currentPoolSlide = index;
+      updatePoolSlideUI();
+      resetPoolSlideTimer();
+    }
+
+    function startPoolSlideTimer() {
+      if (poolSlideTimer) clearInterval(poolSlideTimer);
+      poolSlideTimer = setInterval(() => {
+        currentPoolSlide = (currentPoolSlide + 1) % totalPoolSlides;
+        updatePoolSlideUI();
+      }, 4500);
+    }
+
+    function resetPoolSlideTimer() {
+      startPoolSlideTimer();
+    }
+
     function initMainGallery() {
       setMainGalleryCategory('all');
     }
@@ -2508,6 +2595,7 @@
     initLanguageState();
     renderCalendar();
       initMainGallery();
+      startPoolSlideTimer();
     fetchBookingsFromCloud(); // 클라우드 실시간 예약 데이터 자동 동기화
   </script>
 
